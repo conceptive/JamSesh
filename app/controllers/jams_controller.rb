@@ -1,19 +1,20 @@
 class JamsController < ApplicationController
 	before_action :find_jam, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@jams = Jam.all.order("created_at DESC")
 	end
 
 	def show
-
 	end
 
 	def new
-		@jam = Jam.new
+		@jam = current_user.jams.build
 	end
 
 	def create
-		@jam = Jam.new(jam_params)
+		@jam = current_user.jams.build(jam_params)
 
 		if @jam.save
 			redirect_to @jam
