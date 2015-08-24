@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :jams
 
-  root 'jam#index'
+  root 'jams#index'
 end
