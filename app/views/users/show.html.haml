@@ -3,4 +3,13 @@
 %h2
 	From: 
 	= @user.location
-%p= @user.bio
+%p
+	About: 
+	= @user.bio
+%p
+	Favorite Styles: 
+	= @user.styles
+
+%p
+	Skill Level: 
+	= @user.skill_level_id

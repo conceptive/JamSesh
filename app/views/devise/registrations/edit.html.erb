@@ -15,6 +15,9 @@
     <%= f.input :name, required: true %>
     <%= f.input :email, required: true %>
     <%= f.input :bio, label: "Write Your Bio" %>
+    <%= f.input :styles, label: "Favorite Styles" %>
+    <%= f.label "Choose your skill level:" %>
+    <%= f.collection_select :skill_level_id, SkillLevel.all, :id, :name, { promt: "Choose your skill level"} %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
