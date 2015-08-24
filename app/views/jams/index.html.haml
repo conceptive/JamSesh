@@ -1,3 +1,7 @@
+%ul Find by Genre:
+%li= link_to "All Genres", root_path
+- Genre.all.each do |genre|
+	%li= link_to genre.name, jams_path(genre: genre.name)
 - @jams.each do |jam|
 	%h2= link_to jam.title, jam
 	%p

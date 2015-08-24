@@ -22,7 +22,9 @@
 					%p#intro 
 						What's up,
 						= current_user.name
-						= link_to "Account", edit_user_registration_path
+						= link_to "Profile", 
+							user_path(current_user)
+						= link_to "Edit Account", edit_user_registration_path
 						= link_to "Create a Jam Session", new_jam_path, class: "button"
 						= link_to "Sign Out", destroy_user_session_path, method: :delete
 				- else
@@ -32,7 +34,4 @@
 		%p.notice= notice
 		%p.alert= alert
 	.wrapper
-		%h3 Find by Genre:
-		- Genre.all.each do |genre|
-			=link_to genre.name, jams_path(genre: genre.name)
 		= yield
