@@ -5,9 +5,14 @@
 
   <div class="form-inputs">
     <%= image_tag @user.avatar.url(:medium) %>
-    <h4>Profile Picture</h4>
+    <br>
+    <br>
+    <%= f.label "Profile Picture" %>
+    <br>
     <%= f.file_field :avatar %>
-    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.label "Location" %>
+    <%= f.input :location %>
+    <%= f.input :name, required: true %>
     <%= f.input :email, required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

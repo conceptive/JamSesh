@@ -1,6 +1,8 @@
 = simple_form_for @jam do |f|
+	= f.label "Choose a Genre"
 	= f.collection_select :genre_id, Genre.all, :id, :name, { promt: "Choose a Genre"}
 	= f.input :title
+	= f.label "Preferred"
 	= f.input :location
 	= f.input :date
 	= f.input :time
