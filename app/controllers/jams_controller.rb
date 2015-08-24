@@ -3,7 +3,12 @@ class JamsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
+		if params[:genre].blank?
 		@jams = Jam.all.order("created_at DESC")
+		else
+		@genre_id = Genre.find_by(name: params[:genre]).id
+		@jams = Jam.where(genre_id: @genre_id).order("created_at DESC")
+		end
 	end
 
 	def show
@@ -47,6 +52,6 @@ class JamsController < ApplicationController
 	end
 
 	def jam_params
-		params.require(:jam).permit(:title, :location, :date, :time, :number_of_musicians, :instrument_types )
+		params.require(:jam).permit(:title, :location, :date, :time, :number_of_musicians, :instrument_types, :genre_id )
 	end
 end

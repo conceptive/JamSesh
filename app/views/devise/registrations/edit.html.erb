@@ -5,6 +5,7 @@
 
   <div class="form-inputs">
     <%= image_tag @user.avatar.url(:medium) %>
+    <h4>Profile Picture</h4>
     <%= f.file_field :avatar %>
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :email, required: true %>
