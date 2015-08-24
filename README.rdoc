@@ -1,2 +1,2 @@
-# JamSesh
+# JamSesh <br />
 # A Ruby on Rails web application to help musicians create and find jam sessions in the NYC area.
