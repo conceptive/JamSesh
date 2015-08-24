@@ -1,13 +1,31 @@
 %h1= @jam.title
 %h2= @jam.user.name
 = image_tag(@jam.user.avatar.url(:thumb))
-%h2= @jam.location
-%h2= @jam.date
-%h2= @jam.time
-%h2= @jam.number_of_musicians
-%h2= @jam.instrument_types
+%h2
+	Genre:
+	= @jam.genre.name
+%h2
+	Location: 
+	= @jam.location
+%h2
+	Date: 
+	= @jam.date
+%h2
+	Time: 
+	= @jam.time
+%h2
+	Number of Musicians:
+	= @jam.number_of_musicians
+%h2
+	Instruments Wanted:
+	= @jam.instrument_types
+%h2
+	Skill Level:
+	= @jam.jam_skill.name
 
+%br/
 #comments
+	%h1 Start the Conversation
 	%h2.comment_count= pluralize(@jam.comments.count, "Comment")
 	- @comments.each do |comment|
 		.comment

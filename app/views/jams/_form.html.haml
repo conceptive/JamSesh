@@ -8,5 +8,8 @@
 	= f.input :time
 	= f.input :number_of_musicians
 	= f.input :instrument_types
-
+	= f.label "Preferred Skill Level"
+	= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"}
+	%br/
+	%br/
 	= f.button :submit

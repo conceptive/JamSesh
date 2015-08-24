@@ -52,6 +52,6 @@ class JamsController < ApplicationController
 	end
 
 	def jam_params
-		params.require(:jam).permit(:title, :location, :date, :time, :number_of_musicians, :instrument_types, :genre_id )
+		params.require(:jam).permit(:title, :location, :date, :time, :number_of_musicians, :instrument_types, :genre_id, :jam_skill_id )
 	end
 end
