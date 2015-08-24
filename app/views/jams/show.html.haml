@@ -1,0 +1,11 @@
+%h1= @jam.title
+
+%h2= @jam.location
+%h2= @jam.date
+%h2= @jam.time
+%h2= @jam.number_of_musicians
+%h2= @jam.instrument_types
+
+= link_to "Edit", edit_jam_path(@jam)
+= link_to "Cancel Session", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
+= link_to "Home", root_path

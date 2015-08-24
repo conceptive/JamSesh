@@ -1,1 +1,3 @@
-%h1 Placeholder for index
+- @jams.each do |jam|
+	%h2= link_to jam.title, jam
+= link_to "Create New Session", new_jam_path
