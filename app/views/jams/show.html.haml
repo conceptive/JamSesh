@@ -1,5 +1,6 @@
 %h1= @jam.title
 %h2= @jam.user.name
+= image_tag(current_user.avatar.url(:thumb))
 %h2= @jam.location
 %h2= @jam.date
 %h2= @jam.time
