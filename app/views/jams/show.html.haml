@@ -7,6 +7,15 @@
 %h2= @jam.number_of_musicians
 %h2= @jam.instrument_types
 
+#comments
+	%h2.comment_count= pluralize(@jam.comments.count, "Comment")
+	- @comments.each do |comment|
+		.comment
+			%p.username= comment.user.name
+			%p.content= comment.content
+
+	= render "comments/form"
+
 = link_to "Edit", edit_jam_path(@jam)
 = link_to "Cancel Session", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
 = link_to "Home", root_path

@@ -7,6 +7,7 @@ class JamsController < ApplicationController
 	end
 
 	def show
+		@comments = Comment.where(jam_id: @jam)
 	end
 
 	def new
