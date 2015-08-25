@@ -1,42 +1,47 @@
 %h1= @jam.title
-%h2= @jam.user.name
-= image_tag(@jam.user.avatar.url(:thumb))
-%h2
-	Genre:
-	= @jam.genre.name
-%h2
-	Location: 
-	= @jam.location
-%h2
-	Date: 
-	= @jam.date
-%h2
-	Time: 
-	= @jam.time
-%h2
-	Number of Musicians:
-	= @jam.number_of_musicians
-%h2
-	Instruments Wanted:
-	= @jam.instrument_types
-%h2
-	Skill Level:
-	= @jam.jam_skill.name
+.row.content-wrapper
+	.small-6.large-5.columns
+		%h5= @jam.user.name
+		= image_tag(@jam.user.avatar.url(:thumb))
+		%h5
+			Genre:
+			= @jam.genre.name
+		%h5
+			Location: 
+			= @jam.location
+		%h5
+			Date: 
+			= @jam.date
+		%h5
+			Time: 
+			= @jam.time
+		%h5
+			Number of Musicians:
+			= @jam.number_of_musicians
+		%h5
+			Instruments Wanted:
+			= @jam.instrument_types
+		%h5
+			Skill Level:
+			= @jam.jam_skill.name
+		= link_to "Edit", edit_jam_path(@jam)
+		%span /
+		= link_to "Cancel Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
 
-%br/
-#comments
-	%h1 Start the Conversation
-	%h2.comment_count= pluralize(@jam.comments.count, "Comment")
-	- @comments.each do |comment|
-		.comment
-			%p.username= comment.user.name
-			%p.content= comment.content
-			%p.comment-date
-				Written on
-				= comment.created_at.strftime("%b %d, %Y")
 
-	= render "comments/form"
+	.small-6.large-7.columns	
+		%h4 Start the Conversation
+		%h5.comment_count= pluralize(@jam.comments.count, "Comment")
+		- @comments.each do |comment|
+			.comment
+				%p.username
+					[ 
+					= comment.user.name
+					]
+				%p.content= comment.content
+				%p.comment-date
+					Written on
+					= comment.created_at.strftime("%b %d, %Y")
 
-= link_to "Edit", edit_jam_path(@jam)
-= link_to "Cancel Session", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
-= link_to "Home", root_path
+		= render "comments/form"
+

@@ -12,21 +12,87 @@
  *
  *= require_tree .
  *= require_self
- //= require foundation_and_overrides
-
+ *= require foundation_and_overrides
  */
 
 @import "foundation_and_overrides";
 
+$green       : #9bffa6;
+$lightgray	 : #f2f2f2;
+
+
+/* General Layout */
 body {
 	font-family: Helvetica, sans-serif;
 	font-weight: 300;
-
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 100;
+.row {
+	border-radius: 8px;
 }
+
+.content-wrapper {
+	background: $lightgray;
+	padding: 14px;
+}
+
+/* Overlay Pop-up */
+
+.overlay {
+	position: fixed;
+    background: rgba(0,0,0,0.85) 0%;
+	top: 0;
+    left: 0;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    -webkit-transition: background .5s ease-out;
+  	-moz-transition: background .5s ease-out;
+  	-o-transition: background .5s ease-out;
+  	transition: background .5s ease-out;
+  	h1,h2,h3,h4,h5,h6 {
+  		color: #ccc;
+  	}
+  	.overlay-box {
+  	width: 100%;
+  	height: 70%;	
+	margin: 110px auto;
+  	}
+  	label {
+  		color: #ccc;
+  	}
+  	.logo {
+  		display: block;
+  		background: url('/images/logo_hi_res.png') no-repeat;
+  		background-size: 100%; 
+  		width: 400px;
+  		height: 83px;
+  		margin-bottom: 30px;
+  	}
+  	a{
+  		color: $green;
+  	}
+  	a:hover {
+  		color: $green;
+  	}
+  	li {
+  		list-style: square;
+  	}
+}
+
+.close-overlay {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	color: #fafafa !important
+}
+
+.close-overlay:hover {
+	color: $green !important;
+}
+
+/* Global Elements */
 
 a {
 	color: #333147;
@@ -34,7 +100,15 @@ a {
 }
 
 a:hover {
-	color: #50A7C7;
+	color: #ccc;
+}
+
+ul {
+	margin-left: 0
+}
+
+li {
+	list-style: none
 }
 
 .wrapper {
@@ -51,162 +125,81 @@ a:hover {
 	clear: both;
 }
 
-.button {
-	border: 1px solid #9B9B9B;
+.button, button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	padding: .7rem 1.25rem;
 	border-radius: .3rem;
+	border: 1px solid #ccc;
 	outline: none;
 	background: white;
 	color: #9B9B9B;
+	margin: 0 1rem 1rem 0;
 }
+
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{
+	background: $green;
+	color: #222;
+}
+
+/* Header */
 
 header {
 	width: 100%;
 	height: 80px;
-	padding: 1rem 0;
+	padding: 1rem 1rem;
 	border-bottom: 1px solid #E4E4E4;
-	background: #fafafa;
-	#logo {
-		float: left;
-		font-size: 2.3rem;
-		line-height: 2.7rem;
-		img {
-			width: 35px;
-			vertical-align: text-top;
+	background: #29252c;
+	.button {
+			margin-right: 0;
 		}
-		a {
-			color: #333;
-			text-decoration: none;
-			&:hover {
-				color: #50A7C7;
-			}
-		}
+	.header-wrapper {
+		width: 80%;
+		margin: 0 auto;
 	}
+	.logo {
+		display: block;
+		float: left;
+		background: url('/images/logo_hi_res.png') no-repeat;
+		background-size: 100%; 
+		width: 190px;
+		height: 38px;
+		margin-bottom: 50px;
+		}
 	nav {
 		float: right;
 		a {
 			margin-left: 1.5rem;
 			line-height: 1.2;
-			color: #333;
+			color: #ccc;
 			text-decoration: none;
 			&:hover {
 				color: #50A7C7;
 			}
 		}
+		a:hover {
+			color: $green;
+		}
+	.button {
+		padding: .7rem 1.25rem;
+		border: none;
+		border-radius: .3rem;
+		outline: none;
+		background: white;
+		color: #9B9B9B;
+		margin: 0 1rem;
+		}
+
+	.button:hover {
+		background: $green;
+		color: #222;
+		}	
 	}
 }
 
-#post_show {
-	padding-top: 2rem;
-	.post_image_description {
-		width: 50%;
-		float: left;
-		margin-right: 5%;
-	}
-	.post_data {
-		width: 15%;
-		float: left;
-		.button {
-			width: 100%;
-			display: inline-block;
-			padding: .75rem 0;
-			margin-bottom: 1rem;
-			text-align: center;
-			text-decoration: none;
-			color: #969696;
-			&:hover {
-				color: #50A7C7;
-				border: 1px solid #50A7C7;
-			}
-		}
-		.data {
-			width: 100%;
-			display: block;
-			padding: .75rem 0;
-			border-bottom: 1px solid #E9E9E9;
-			text-decoration: none;
-			color: #969696;
-			margin: 0;
-		}
-	}
-	#random_post {
-		width: 25%;
-		margin-left: 5%;
-		margin-top: -3.2rem;
-		float: left;
-		h3 {
-			font-size: 1rem;
-		}
-		.post {
-			background: #F8F9FA;
-			border: 1px solid #E4E4E4;
-			border-radius: 0.3rem;
-			.post_image {
-				height: 200px;
-				overflow: hidden;
-				img {
-					width: 100%;
-					border-radius: .3rem .3rem 0 0;
-				}
-			}
-			.post_content {
-				h2 {
-					margin: 0;
-					font-weight: 100;
-					padding: 1rem 5%;
-					border-bottom: 1px solid #E4E4E4;
-					font-size: 1.25rem;
-					a {
-						text-decoration: none;
-						color: #333233;
-						&:hover {
-							color: #50A7C7;
-						}
-					}
-				}
-				.data {
-					padding: .75rem 5%;
-					color: #969696;
-					.username, .buttons {
-						margin: 0;
-						font-size: .8rem;
-					}
-					.username {
-						float: left;
-					}
-					.buttons {
-						float: right;
-						span {
-							margin-left: .5rem;
-						}
-					}
-				}
-			}
-		}
-	}
-	h1 {
-		margin: 0;
-		color: #333233;
-	}
-	img {
-		width: 100%;
-		border-radius: .3rem;
-	}
-	.username {
-		color: #969696;
-		margin: 0 0 1.5rem 0;
-	}
-	.description {
-		margin: 2rem 0;
-		font-size: 1.1rem;
-		line-height: 1.5;
-		color: #969696;
-	}
-}
+/* Comments */
 
 #comments {
 	padding-bottom: 4rem;
-	width: 50%;
+	width: 80%;
 	.comment_count {
 		border-bottom: 1px solid #E9E9E9;
 		padding-bottom: .5rem;
@@ -229,7 +222,7 @@ header {
 	.comment_content {
 		margin-top: 2.5rem;
 		textarea {
-			width: 100%;
+			width: 80%;
 			margin: 1rem 0;
 			min-height: 150px;
 			border: 1px solid #E4E4E4;

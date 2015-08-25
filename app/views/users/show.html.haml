@@ -1,13 +1,14 @@
-%h1= @user.name
-= image_tag @user.avatar.url(:medium)
-%h2
-	From: 
-	= @user.location
-%p
-	About: 
-	= @user.bio
-%p
-	Favorite Styles: 
-	= @user.styles
+.row.content-wrapper
+	%h1= @user.name
+	= image_tag @user.avatar.url(:medium)
+	%h2
+		From: 
+		= @user.location
+	%p
+		About: 
+		= @user.bio
+	%p
+		Favorite Styles: 
+		= @user.styles
 
-%p Skill Level: 
+	%p Skill Level: 
