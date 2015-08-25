@@ -1,41 +1,45 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= image_tag @user.avatar.url(:medium) %>
+<div class="row">
+  <div class="small-6 large-centered columns">
     <br>
-    <br>
-    <%= f.label "Profile Picture" %>
-    <br>
-    <%= f.file_field :avatar %>
-    <%= f.label "Location" %>
-    <%= f.input :location %>
-    <%= f.input :name, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :bio, label: "Write Your Bio" %>
-    <%= f.input :styles, label: "Favorite Styles" %>
-    <%= f.label "Choose your skill level:" %>
-    <%= f.collection_select :skill_level_id, SkillLevel.all, :id, :name, { promt: "Choose your skill level"} %>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= image_tag @user.avatar.url(:medium) %>
+        <br>
+        <br>
+        <%= f.label "Profile Picture" %>
+        <br>
+        <%= f.file_field :avatar %>
+        <%= f.input :location %>
+        <%= f.input :name, required: true %>
+        <%= f.input :email, required: true %>
+        <%= f.input :bio, label: "Write Your Bio" %>
+        <%= f.input :styles, label: "Favorite Styles" %>
+        <%= f.label "Choose your skill level:" %>
+        <%= f.collection_select :skill_level_id, SkillLevel.all, :id, :name, { promt: "Choose your skill level"} %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+        <%= f.input :password_confirmation, required: false %>
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <h3>Cancel my account</h3>
 
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

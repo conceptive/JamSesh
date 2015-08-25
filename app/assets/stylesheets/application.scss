@@ -1,6 +1,22 @@
 /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
  *= require_self
-*/
+ //= require foundation_and_overrides
+
+ */
+
+@import "foundation_and_overrides";
 
 body {
 	font-family: Helvetica, sans-serif;
@@ -46,15 +62,17 @@ a:hover {
 
 header {
 	width: 100%;
-	height: 50px;
-	padding: 1.5rem 0;
+	height: 80px;
+	padding: 1rem 0;
 	border-bottom: 1px solid #E4E4E4;
 	background: #fafafa;
 	#logo {
 		float: left;
-		font-size: 2.50rem;
+		font-size: 2.3rem;
+		line-height: 2.7rem;
 		img {
-			width: 40px;
+			width: 35px;
+			vertical-align: text-top;
 		}
 		a {
 			color: #333;
@@ -68,7 +86,7 @@ header {
 		float: right;
 		a {
 			margin-left: 1.5rem;
-			line-height: 1;
+			line-height: 1.2;
 			color: #333;
 			text-decoration: none;
 			&:hover {

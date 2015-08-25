@@ -12,6 +12,7 @@ gem 'haml', '~> 4.0.7'
 gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug'
