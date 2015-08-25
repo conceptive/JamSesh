@@ -23,13 +23,13 @@
 			= link_to "", root_path, class: "logo"
 			%nav
 				- if user_signed_in?
-					%p#intro 
+					%p 
 						What's up,
 						= current_user.name
+						= link_to "New Jam Session", new_jam_path, class: "button"
 						= link_to "Profile", 
 							user_path(current_user)
 						= link_to "Edit", edit_user_registration_path
-						= link_to "New Jam", new_jam_path, class: "button"
 						= link_to "Sign Out", destroy_user_session_path, method: :delete
 				- else
 					= link_to "Sign in", new_user_session_path
@@ -38,3 +38,15 @@
 	%br/
 	.wrapper
 		= yield
+
+%footer
+	.wrapper
+		= link_to "", root_path, class: "logo"
+		%nav
+			= link_to "About", root_path
+			= link_to "Privacy Policy", root_path
+			= link_to "Terms & Conditions", root_path
+			= link_to "Contact", root_path
+
+
+
