@@ -15,13 +15,13 @@
 //= require foundation
 //= require_tree .
 
-
 $(function(){ $(document).foundation(); });
 
-
 //fadeout flash messages
-$('.flash').not('.login_error').fadeIn(function() {
-    setTimeout(function() {
-        $('.flash').fadeOut();
-    }, '2000');
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice-wrapper').fadeOut("slow", function() {
+			$(this).remove();
+		})
+	}, 3500);
 });

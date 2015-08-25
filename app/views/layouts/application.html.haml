@@ -11,6 +11,13 @@
 	= csrf_meta_tags
 
 %body
+	- if notice
+		#notice-wrapper
+			%p.notice= notice
+	- elsif alert
+		#notice-wrapper
+			%p.alert= alert
+	
 	%header
 		.header-wrapper
 			= link_to "", root_path, class: "logo"
@@ -30,6 +37,4 @@
 			
 	%br/
 	.wrapper
-		%p.notice= notice
-		%p.alert= alert
 		= yield

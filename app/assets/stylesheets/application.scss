@@ -19,6 +19,7 @@
 
 $green       : #9bffa6;
 $lightgray	 : #f2f2f2;
+$darkgrey	 : #29252c;
 
 
 /* General Layout */
@@ -34,6 +35,24 @@ body {
 .content-wrapper {
 	background: $lightgray;
 	padding: 14px;
+}
+
+#notice-wrapper {
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	top: 0;
+	background: $green;
+	opacity: 0.85;
+	.alert, .notice {
+		text-align: center;
+	    padding: 1.55rem 0;
+	    margin: 0;
+	    font-weight: 500;
+	    color: #444444;
+	    font-size: 1.2rem;
+	    letter-spacing: 1px;
+	}
 }
 
 /* Overlay Pop-up */
