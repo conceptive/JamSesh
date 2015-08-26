@@ -1,15 +1,25 @@
+.sub-header
+	%h2 
+		Find a 
+		%span Jam Session 
+		in Your Area.
+
+%br/
+.wrapper
 .row.content-wrapper
 	.small-9.columns
-		%h2 Find a Jam Session
+		%h2 Lastest Jams
 		%br/
 		- @jams.each do |jam|
+			= image_tag @jam.user.avatar.url(:thumb).
 			%h4= link_to jam.title, jam
 			%p
 				= jam.comments.count
 				Comment(s)
 	.small-3.columns
+		%h2 Find by:
 		%br/
-		%ul Find by Genre:
+		%ul Genre:
 		%li= link_to "All Genres", root_path
 		- Genre.all.each do |genre|
 			%li= link_to genre.name, jams_path(genre: genre.name)

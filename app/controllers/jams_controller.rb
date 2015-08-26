@@ -42,7 +42,7 @@ class JamsController < ApplicationController
 
 	def destroy
 		@jam.destroy
-		redirect_to root_path
+		redirect_to jams_path
 	end
 
 	private

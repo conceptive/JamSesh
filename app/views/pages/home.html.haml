@@ -1,7 +1,7 @@
 .home-overlay
 	.home-header
 		.logo
-	.welcome-back 
+	.welcome
 		- if user_signed_in?
 			.home-sign-out
 				= link_to "Sign Out", destroy_user_session_path, method: :delete
@@ -13,5 +13,23 @@
 				or
 				= link_to "Create your Own", new_jam_path, class: "button"
 		- else
-			= link_to "Sign in", new_user_session_path, class: "button"
-			= link_to "Sign up", new_user_registration_path, class: "button"
+			%h1
+				Find Other Musicians 
+				%br/
+				to 
+				%span Jam 
+				with in NYC.
+				%br/
+				= link_to "Get Started", new_user_registration_path, class: "button"
+				%p
+					Already have an account?
+					= link_to "Login", new_user_session_path, class: "home-login"
+	.why-jam
+		.row 
+			.large-6.columns
+				.home-guitar
+			.large-6.columns
+				%h1 Why Jam with Other Musicians?
+				%p Jamming is great for musicians who are interested in networking with other like minded people, from beginners to professionals and in all genres.  Attending open jams not only lets you collaborate with other musicians, but its a great way to find potential band members, and to test out and get feedback on new songs that you are working on!
+
+

@@ -1,5 +1,8 @@
-%h1 Edit Jam Session
+#row
+	.small-6.large-centered.columns
+		%h1 Edit Jam Session
+		= link_to "Go back", @jam
+		%br/
+		= render 'form'
 
-= render 'form'
-
-= link_to "Cancel", @jam
+		

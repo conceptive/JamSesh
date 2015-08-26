@@ -1,8 +1,9 @@
-%h1= @jam.title
+.wrapper
+	%h1= @jam.title
 .row.content-wrapper
 	.small-6.large-5.columns
 		%h5= @jam.user.name
-		= image_tag(@jam.user.avatar.url(:thumb))
+		= image_tag @jam.user.avatar.url(:thumb)
 		%h5
 			Genre:
 			= @jam.genre.name
