@@ -1,4 +1,5 @@
 .row.content-wrapper
+	%p.edit= link_to "Edit Profile", edit_user_registration_path
 	%h1= @user.name
 	= image_tag @user.avatar.url(:medium)
 	%h2

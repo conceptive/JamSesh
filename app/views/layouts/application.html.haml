@@ -20,16 +20,13 @@
 	
 	%header
 		.header-wrapper
-			= link_to "", root_path, class: "logo"
+			= link_to "", jams_path, class: "logo"
 			%nav
 				- if user_signed_in?
 					%p 
 						What's up,
-						= current_user.name
+						= link_to current_user.name, user_path(current_user), class:'nav-user'
 						= link_to "New Jam Session", new_jam_path, class: "button"
-						= link_to "Profile", 
-							user_path(current_user)
-						= link_to "Edit", edit_user_registration_path
 						= link_to "Sign Out", destroy_user_session_path, method: :delete
 				- else
 					= link_to "Sign in", new_user_session_path
