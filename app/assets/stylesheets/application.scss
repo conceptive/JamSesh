@@ -54,7 +54,7 @@ body {
 	opacity: 0.85;
 	.alert, .notice {
 		text-align: center;
-	    padding: 1.55rem 0;
+	    padding: 1.50rem 0;
 	    margin: 0;
 	    font-weight: 500;
 	    color: #444444;
@@ -72,6 +72,24 @@ body {
 		height: 38px;
 		margin: 0 1.2rem;
 		margin-left: 0;
+}
+
+.profile-pic {
+	border-radius: 50%;
+}
+
+.edit-profile-pic {
+	width: 100px;
+	border-radius: 50%;
+}
+
+.header-profile-pic {
+	width: 30px;
+	border-radius: 50%;
+	margin-right: 4px;
+}
+.header-profile-pic:hover {
+	border: 1px solid $green;
 }
 
 /* Home Content */
@@ -272,7 +290,6 @@ li {
 .button, button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	padding: .7rem 1.25rem;
 	border-radius: .3rem;
-	border: 1px solid #ccc;
 	outline: none;
 	background: white;
 	color: #9B9B9B;
@@ -373,6 +390,15 @@ header {
 	  	font-weight: bold;
 	  	color: #333046;
 	  }
+	  .button {
+	  	margin-top: 15px;
+	  	background: $darkgrey;
+	  	color: #eeeeee
+	  }
+
+	  .button:hover {
+	  	color: $green;
+	  }
 	  p.genre {
 	  	font-weight: bold;
 	  }
@@ -393,7 +419,55 @@ header {
 	float: right;
 }
 
+.form-inputs {
+	.large-5 {
+		padding: 0 40px;
+	}
+}
+
+#user_bio {
+	height: 300px;
+}
+
+#user_styles {
+	height: 140px;
+}
+
+#user_current_password {
+	background: $green;
+}
+
+.hint {
+		font-size: 0.8rem
+	}
+
+.form-actions {
+	.btn {
+		float: right;
+		margin: 40px;
+		font-size: 1.5rem;
+	}
+}
+
+.cancel-account {
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	float: right;
+	width: 250px;
+	a {
+		color: #F64747;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
 /* Comments */
+
+#comment_content {
+	height: 150px;
+}
 
 #comments {
 	padding-bottom: 4rem;

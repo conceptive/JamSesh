@@ -4,10 +4,11 @@ class JamsController < ApplicationController
 
 	def index
 		if params[:genre].blank?
-		@jams = Jam.all.order("created_at DESC").paginate(page: params[:page], per_page: 8)
+			@jams = Jam.all.order("created_at DESC").paginate(page: params[:page], per_page: 8)
 		else
-		@genre_id = Genre.find_by(name: params[:genre]).id
-		@jams = Jam.where(genre_id: @genre_id).order("created_at DESC").paginate(page: params[:page], per_page: 8)
+			@jams = Jam.where(genre_id: @genre_id).order("created_at DESC").paginate(page: params[:page], per_page: 8)
+			@genre_id = Genre.find_by(name: params[:genre]).id
+			@genre = Genre.find_by(name: params[:genre]).name
 		end
 	end
 

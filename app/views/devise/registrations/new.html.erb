@@ -25,6 +25,9 @@
             <%= f.input :email, required: true %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation, required: true %>
+            <%= f.label "Choose your skill level:" %>
+            <%= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"}, required: true %>
+
           </div>
 
           <div class="form-actions">

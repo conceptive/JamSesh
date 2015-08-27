@@ -1,15 +1,29 @@
 .row.content-wrapper
-	%p.edit= link_to "Edit Profile", edit_user_registration_path
-	%h1= @user.name
-	= image_tag @user.avatar.url(:medium)
-	%h2
-		From: 
-		= @user.location
-	%p
-		About: 
-		= @user.bio
-	%p
-		Favorite Styles: 
-		= @user.styles
+	%br/
+	.small-6.large-5.columns	
+		%h1= @user.name
+		= image_tag @user.avatar.url(:medium), class: "profile-pic"
+		%h4= @user.location
+		%p 
+			Main Instrument:
+			= @user.main_instrument
+		%p
+			Other Instruments:
+			= @user.user_instruments
+		%p
+			Favorite Styles: 
+			= @user.styles
+		%p
+			Skill Level: 
+			= @user.jam_skill.name
 
-	%p Skill Level: 
+	.small-6.large-7.columns
+		%p.edit= link_to "Edit Profile", edit_user_registration_path
+		.clearfix
+		%h4
+			About: 
+			%br/
+		%p
+			= @user.bio
+
+

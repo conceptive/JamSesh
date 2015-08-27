@@ -9,12 +9,14 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || stored_location_for(resource) || jams_path
   end
 
-
 	protected
 
-	def configure_permitted_parameters
-	  devise_parameter_sanitizer.for(:sign_up) << :name
-	  devise_parameter_sanitizer.for(:account_update) << :name << :avatar << :location << :bio << :styles << :skill_level
+  def after_update_path_for(resource)
+      user_path(resource)
+    end
 
+	def configure_permitted_parameters
+	  devise_parameter_sanitizer.for(:sign_up) << :name << :jam_skill_id
+	  devise_parameter_sanitizer.for(:account_update) << :name << :avatar << :location << :bio << :styles << :jam_skill_id << :user_instruments << :main_instrument
 	end
 end

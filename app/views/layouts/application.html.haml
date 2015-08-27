@@ -26,6 +26,7 @@
 					%p 
 						What's up,
 						= link_to current_user.name, user_path(current_user), class:'nav-user'
+						= link_to image_tag(current_user.avatar.url(:medium) , class: "header-profile-pic" ), user_path(current_user)
 						= link_to "New Jam Session", new_jam_path, class: "button"
 						= link_to "Sign Out", destroy_user_session_path, method: :delete
 				- else

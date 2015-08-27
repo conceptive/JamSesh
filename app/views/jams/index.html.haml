@@ -11,26 +11,30 @@
 		%h2 
 			Lastest Jams
 		%br/
-		%p
-			Genre: 
-			= @genre_id
+		%p= @genre
 		- @jams.each do |jam|
 			.results-box
 				%h4.text= link_to jam.title, jam
 				%p.genre
 					= jam.genre.name
 				%p
-					Location: 
-					= jam.location
+					= image_tag jam.user.avatar.url(:thumb), class: "profile-pic"
 					%br/
-					when? 
+					by: 
+					= link_to jam.user.name, user_path(jam.user_id)
+					%br/
+					%br/
+					Around 
+					= jam.location
+					%br/ 
 					= jam.date
 					%br/
-					Confirmed: 
+					= jam.jam_skill.name
+					%br/
+					Members: 
 					= jam.number_of_musicians
 					%br/
-					= jam.comments.count
-					Comment(s)
+					= link_to 'Check it Out', jam, class: 'button'
 		.clearfix
 		%br/			
 		= will_paginate @jams, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0

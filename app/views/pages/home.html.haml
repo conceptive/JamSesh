@@ -4,6 +4,7 @@
 	.welcome
 		- if user_signed_in?
 			.home-sign-out
+				= link_to image_tag(current_user.avatar.url(:medium) , class: "header-profile-pic" ), user_path(current_user)
 				= link_to "Sign Out", destroy_user_session_path, method: :delete
 			%h1 
 				Welcome Back, 
@@ -20,7 +21,7 @@
 				%span Jam 
 				with in NYC.
 				%br/
-				= link_to "Get Started", jams_path, class: "button"
+				= link_to "Browse Jams", jams_path, class: "button"
 				%p
 					Already have an account?
 					= link_to "Login", new_user_session_path, class: "home-login"
