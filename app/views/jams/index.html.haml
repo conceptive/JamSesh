@@ -8,19 +8,37 @@
 .wrapper
 .row.content-wrapper
 	.small-9.columns
-		%h2 Lastest Jams
+		%h2 
+			Lastest Jams
 		%br/
+		%p
+			Genre: 
+			= @genre_id
 		- @jams.each do |jam|
-			= image_tag @jam.user.avatar.url(:thumb).
-			%h4= link_to jam.title, jam
-			%p
-				= jam.comments.count
-				Comment(s)
+			.results-box
+				%h4.text= link_to jam.title, jam
+				%p.genre
+					= jam.genre.name
+				%p
+					Location: 
+					= jam.location
+					%br/
+					when? 
+					= jam.date
+					%br/
+					Confirmed: 
+					= jam.number_of_musicians
+					%br/
+					= jam.comments.count
+					Comment(s)
+		.clearfix
+		%br/			
+		= will_paginate @jams, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0
 	.small-3.columns
 		%h2 Find by:
 		%br/
 		%ul Genre:
-		%li= link_to "All Genres", root_path
+		%li= link_to "All Genres", jams_path
 		- Genre.all.each do |genre|
 			%li= link_to genre.name, jams_path(genre: genre.name)
 	

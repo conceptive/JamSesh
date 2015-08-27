@@ -36,6 +36,13 @@ body {
 .content-wrapper {
 	background: $lightgray;
 	padding: 14px;
+	h2 {
+		color: #333046;
+	}
+}
+
+.small-9 {
+	border-right: 1px solid #dddddd;
 }
 
 #notice-wrapper {
@@ -209,6 +216,13 @@ body {
   	li {
   		list-style: square;
   	}
+  	.button {
+  		color: $darkgrey;
+  		border: none;
+  	}
+  	.button:hover {
+  		color: $darkgrey;
+  	}
 }
 
 .close-overlay {
@@ -344,6 +358,34 @@ header {
 	}
 }
 
+/* Jam Results */
+
+.results-box {
+	  margin: 1rem 1.5rem 0.5rem 0;
+	  width: 45%;
+	  float: left;
+	  padding: 1rem;
+	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	  border-radius: 7px;
+	  text-align: center;
+	  background: #eee;
+	  h4 a {
+	  	font-weight: bold;
+	  	color: #333046;
+	  }
+	  p.genre {
+	  	font-weight: bold;
+	  }
+	  img {
+	  	max-width: 100%;
+	  	height: auto;
+	  }
+	  .text {
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+    }
+	}
 
 /* Profile */
 

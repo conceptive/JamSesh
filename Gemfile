@@ -13,6 +13,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
 gem 'foundation-rails'
+gem 'will_paginate', '~> 3.0.7'
 
 group :development, :test do
   gem 'byebug'
