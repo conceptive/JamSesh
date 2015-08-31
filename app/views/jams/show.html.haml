@@ -4,7 +4,7 @@
 	.small-6.large-5.columns
 		%h5
 			by 
-			= link_to @jam.user.username, user_path(@jam.user.username)
+			= link_to @jam.user.username, user_path(@jam.user.id)
 		= image_tag @jam.user.avatar.url(:thumb), class: "profile-pic"
 		%h5
 			Genre:
@@ -40,7 +40,7 @@
 				.comment
 					%p.username
 						[ 
-						= link_to comment.user.name, user_path(comment.user_id)
+						= link_to comment.user.name, user_path(comment.user.id)
 						]
 					%p.content= comment.content
 					- if user_signed_in?

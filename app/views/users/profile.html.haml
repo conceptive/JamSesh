@@ -1,21 +1,21 @@
 .row.content-wrapper
 	%br/
 	.small-6.large-5.columns	
-		%h1= @user.username
-		= image_tag @user.avatar.url(:medium), class: "profile-pic"
+		%h1= current_user.name
+		= image_tag current_user.avatar.url(:medium), class: "profile-pic"
 		%h4= current_user.location
 		%p 
 			Main Instrument:
-			= @user.main_instrument
+			= current_user.main_instrument
 		%p
 			Other Instruments:
-			= @user.user_instruments
+			= current_user.user_instruments
 		%p
 			Favorite Styles: 
-			= @user.styles
+			= current_user.styles
 		%p
 			Skill Level: 
-			= @user.jam_skill.name
+			= current_user.jam_skill.name
 
 	.small-6.large-7.columns
 		%p.edit= link_to "Edit Profile", edit_user_registration_path
@@ -24,6 +24,6 @@
 			About: 
 			%br/
 		%p
-			= @user.bio
+			= current_user.bio
 
 
