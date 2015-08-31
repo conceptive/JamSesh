@@ -14,6 +14,7 @@ gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
 gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.7'
+gem "cancan"
 
 group :development, :test do
   gem 'byebug'
