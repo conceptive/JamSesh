@@ -13,4 +13,12 @@ class CommentsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def destroy
+		@jam = Jam.find(params[:jam_id])
+		@comment = @jam.comments.find(params[:id])
+		@comment.destroy
+
+		redirect_to jam_path(@jam)
+	end
 end

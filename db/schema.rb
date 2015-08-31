@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827174512) do
+ActiveRecord::Schema.define(version: 20150831142641) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -81,9 +81,11 @@ ActiveRecord::Schema.define(version: 20150827174512) do
     t.integer  "jam_skill_id"
     t.string   "user_instruments"
     t.string   "main_instrument"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

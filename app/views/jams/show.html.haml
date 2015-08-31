@@ -4,7 +4,7 @@
 	.small-6.large-5.columns
 		%h5
 			by 
-			= link_to @jam.user.name, user_path(@jam.user_id)
+			= link_to @jam.user.username, user_path(@jam.user.username)
 		= image_tag @jam.user.avatar.url(:thumb), class: "profile-pic"
 		%h5
 			Genre:
@@ -27,23 +27,30 @@
 		%h5
 			Skill Level:
 			= @jam.jam_skill.name
-		= link_to "Edit", edit_jam_path(@jam)
-		%span /
-		= link_to "Cancel Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
+		= if user_signed_in?
+			= link_to "Edit", edit_jam_path(@jam)
+			%span /
+			= link_to "Cancel Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
 
-	.small-6.large-7.columns	
+	.small-6.large-7.columns.comments-box	
 		%h4 Start the Conversation
-		%h5.comment_count= pluralize(@jam.comments.count, "Comment")
-		- @comments.each do |comment|
-			.comment
-				%p.username
-					[ 
-					= link_to comment.user.name, user_path(comment.user_id)
-					]
-				%p.content= comment.content
-				%p.comment-date
-					Written on
-					= comment.created_at.strftime("%b %d, %Y")
-
-		= render "comments/form"
+		%p.comment-count= pluralize(@jam.comments.count, "Comment")
+		#comments
+			- @comments.each do |comment|
+				.comment
+					%p.username
+						[ 
+						= link_to comment.user.name, user_path(comment.user_id)
+						]
+					%p.content= comment.content
+					- if user_signed_in?
+						= link_to "Delete", [comment.jam, comment], method: :delete, data: { confirm: "Are you sure?" }
+					%p.comment-date
+						= time_ago_in_words(comment.created_at)
+						ago.
+		%br/
+		- if user_signed_in?
+			= render "comments/form"
+		- else
+			%h5 You need to login to post comments.	
 
