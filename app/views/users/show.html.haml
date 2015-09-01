@@ -1,4 +1,4 @@
-.row.content-wrapper
+.row.content-wrapper.spacing
 	%br/
 	.small-6.large-5.columns	
 		%h1= @user.username
@@ -16,6 +16,10 @@
 		%p
 			Skill Level: 
 			= @user.jam_skill.name
+
+		%p
+			Jams:
+
 
 	.small-6.large-7.columns
 		%p.edit= link_to "Edit Profile", edit_user_registration_path
