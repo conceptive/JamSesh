@@ -3,7 +3,7 @@
 	= f.collection_select :genre_id, Genre.all, :id, :name, { promt: "Choose a Genre"}
 	= f.input :title
 	= f.input :location, label: "Preferred Location"
-	= f.input :date
+	= f.input :date, label: "Preferred Day/Days"
 	= f.input :time
 	= f.input :number_of_musicians
 	= f.input :instrument_types

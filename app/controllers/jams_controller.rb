@@ -14,7 +14,7 @@ class JamsController < ApplicationController
 	end
 
 	def show
-		@comments = Comment.where(jam_id: @jam)
+		@comments = Comment.where(jam_id: @jam).all.order("created_at DESC")
 	end
 
 	def new

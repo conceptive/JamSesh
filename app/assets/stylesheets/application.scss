@@ -276,6 +276,7 @@ li {
 
 .wrapper {
 	width: 80%;
+	padding: 0 .8rem;
 	margin: 0 auto;
 }
 
@@ -497,12 +498,13 @@ header {
 
 .comments-box {
 	border-left: 1px solid $white;
-	padding: 1.5rem;
+	padding: .5rem 1.5rem;
 }
 
 #comments {
 	padding-bottom: 2rem;
 	height: 500px;
+	background: $white;
 	overflow-y: scroll;
     overflow-x: hidden;
 	width: 100%;
@@ -515,15 +517,39 @@ header {
 		padding: 1rem 0;
 		border-bottom: 1px solid #E9E9E9;
 		padding-left: 5%;
-		.username {
-			font-size: 1.3rem;
+		.userbox {
+			height: 3rem;
+			font-size: .9rem;
 			color: #333233;
-			margin: 0 0 .5rem 0;
+			.username {
+				font-size: 1rem;
+				font-weight: bold;
+				.comment-delete {
+					border: 1px solid $darkgrey;
+					padding: 0 .3rem;
+					border-radius: 50%;
+					float: right;
+					margin-right: 1rem;
+					font-size: .8rem
+				}
 			}
-	textarea {
-	height: 150px;
+			.mini-avatar {
+			border-radius: 50%;
+			width: 50px;
+			float: left;
+			margin-right: 1rem;
+			}
 		}
+		.content {
+			margin-left: 4.2rem;
+			margin-top: 1rem;
+			font-size: 1rem
+		}
+	
 	}
+}
+.comment_content textarea {
+		height: 100px;
 }
 
 /* Footer */

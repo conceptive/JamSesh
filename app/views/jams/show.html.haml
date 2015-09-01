@@ -1,11 +1,12 @@
 .wrapper
+	.spacing
 	%h1= @jam.title
 .row.content-wrapper
 	.small-6.large-5.columns
 		%h5
 			by 
 			= link_to @jam.user.username, user_path(@jam.user.id)
-		= image_tag @jam.user.avatar.url(:thumb), class: "profile-pic"
+		= link_to image_tag(@jam.user.avatar.url(:thumb), class: "profile-pic" ), user_path(@jam.user.id)
 		%h5
 			Genre:
 			= @jam.genre.name
@@ -13,13 +14,13 @@
 			Location: 
 			= @jam.location
 		%h5
-			Date: 
+			Preferred Days: 
 			= @jam.date
 		%h5
-			Time: 
+			Preferred Time: 
 			= @jam.time
 		%h5
-			Number of Musicians:
+			Musicians Wanted:
 			= @jam.number_of_musicians
 		%h5
 			Instruments Wanted:
@@ -34,23 +35,29 @@
 
 	.small-6.large-7.columns.comments-box	
 		%h4 Start the Conversation
-		%p.comment-count= pluralize(@jam.comments.count, "Comment")
-		#comments
-			- @comments.each do |comment|
-				.comment
-					%p.username
-						[ 
-						= link_to comment.user.name, user_path(comment.user.id)
-						]
-					%p.content= comment.content
-					- if user_signed_in?
-						= link_to "Delete", [comment.jam, comment], method: :delete, data: { confirm: "Are you sure?" }
-					%p.comment-date
-						= time_ago_in_words(comment.created_at)
-						ago.
 		%br/
 		- if user_signed_in?
 			= render "comments/form"
 		- else
 			%h5 You need to login to post comments.	
+		%p.comment-count= pluralize(@jam.comments.count, "Comment")
+		#comments
+			- @comments.each do |comment|
+				.comment
+					.userbox
+						= link_to image_tag(comment.user.avatar.url(:thumb), class: 'mini-avatar' ), user_path(comment.user.id)
+						.username
+							[ 
+							= link_to comment.user.name, user_path(comment.user.id)
+							]
+							.comment-delete 
+								- if user_signed_in?
+									= link_to "X", [comment.jam, comment], method: :delete, data: { confirm: "Are you sure?" }
+						.comment-date
+						= time_ago_in_words(comment.created_at)
+						ago.
+						
+					.content
+						= comment.content		
+		
 

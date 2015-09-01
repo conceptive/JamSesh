@@ -1,13 +1,9 @@
-<div class="row content-wrapper spacing">
+<div class="wrapper spacing">
     <br>
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
     <%= link_to "Go Back", :back %>
-    <script>
-      $(function() {
-          $( "#datepicker" ).datepicker();
-      });
-    </script>
+</div>
+<div class="row content-wrapper">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
