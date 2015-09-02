@@ -340,6 +340,16 @@ li {
 	color: #222;
 }
 
+.button:active, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active{
+	background: $green;
+	color: #222;
+}
+
+.button:visited, button:visited, html input[type="button"]:visited, input[type="reset"]:visited, input[type="submit"]:visited{
+	background: $green;
+	color: #222;
+}
+
 /* Header */
 
 header {
@@ -396,7 +406,19 @@ header {
 	.button:hover {
 		background: $green;
 		color: #222;
-		}	
+		}		
+	.button:focus, button:focus {
+		background: $green;
+		color: #222;
+		}		
+	}
+}
+
+.f-dropdown {
+	width: 130px;
+	max-width: 130px;
+	a:hover {
+		color: $darkgrey;
 	}
 }
 
