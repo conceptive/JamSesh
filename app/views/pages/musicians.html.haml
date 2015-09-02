@@ -1,0 +1,9 @@
+.row.content-wrapper.spacing
+	%h1 All Musicians
+	- @users.each do |user|
+		.small-block-grid-2.medium-block-grid-3.large-block-grid-4.musicians
+			= link_to image_tag(user.avatar.url(:medium)), user_path(user.id), class: "profile-pic"
+			%br/
+			= link_to user.username, user_path(user.id)
+	.clearfix
+	= will_paginate @users, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0

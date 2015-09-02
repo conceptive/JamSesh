@@ -14,18 +14,20 @@
             <%= image_tag @user.avatar.url(:medium), class: "edit-profile-pic" %>
             <br>
             <%= f.label "Change Profile Picture" %>
-            <%= f.file_field :avatar %>
-            <%= f.input :location %>
             <%= f.input :name, required: true %>
             <%= f.input :username, required: true %>
+            <%= f.file_field :avatar %>
+            <%= f.input :location %>
             <%= f.input :email, required: true %>
-          </div>
-          <div class="large-6 columns">
             <%= f.input :main_instrument, label: "Select your Main Instrument" %>
-            <%= f.input :user_instruments, label: "What Other Instruments do you Play?" %>
-            <%= f.input :styles, label: "Favorite Styles" %>
             <%= f.label "Choose your skill level:" %>
             <%= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"} %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.input :user_instruments, label: "What Other Instruments do you Play?" %>
+            <%= f.input :styles, label: "Favorite Genres" %>
+            <%= f.input :influences, label: "Influences (Elvis, Nirvana, Sting...)" %>
+            <%= f.input :equipment, label: "Equipment (Fender, Pearl, Shure...)" %>
           </div>
         </div>
         <div class="small-6 large-5 columns">

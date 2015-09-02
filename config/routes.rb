@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, 
   :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
-  get 'u/:id' => 'users#show', as: :user
 
   resources :users, :only => [:show, :profile] do
     member do
@@ -18,4 +17,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get "users/show"
+  get "pages/musicians"
+  get 'musicians' => 'pages#musicians', as: :musicians
 end

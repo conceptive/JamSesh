@@ -11,8 +11,14 @@
 			Other Instruments:
 			= @user.user_instruments
 		%p
-			Favorite Styles: 
+			Favorite Genres: 
 			= @user.styles
+		%p
+			Influences: 
+			= @user.influences
+		%p
+			Equipment: 
+			= @user.equipment
 		%p
 			Skill Level: 
 			= @user.jam_skill.name
@@ -31,10 +37,10 @@
 		= @user.followers.map(&:username).join(" / ")
 		%br/
 
-
-		= link_to "Follow", follow_user_path(@user), class: 'btn followButton'
-		*
-		= link_to "Unfollow", unfollow_user_path(@user), class: 'btn followButton'
+		- if user_signed_in?
+			= link_to "Follow", follow_user_path(@user), class: 'btn followButton'
+			*
+			= link_to "Unfollow", unfollow_user_path(@user), class: 'btn followButton'
 
 
 

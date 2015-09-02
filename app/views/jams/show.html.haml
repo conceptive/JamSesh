@@ -37,10 +37,10 @@
 			Skill Level:
 			%br/
 			= @jam.jam_skill.name
-		= if user_signed_in?
+		- if @jam.user == current_user
 			= link_to "Edit", edit_jam_path(@jam)
 			%span /
-			= link_to "Cancel Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
+			= link_to "Delete Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
 
 	.small-6.large-7.columns.comments-box	
 		%h4 Start the Conversation
