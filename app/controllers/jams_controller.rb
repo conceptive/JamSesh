@@ -7,9 +7,7 @@ class JamsController < ApplicationController
 			@jams = Jam.all.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 		else
 			@genre_id = Genre.find_by(name: params[:genre])
-			@jams = Jam.where(genre: @genre_id).order("created_at DESC").paginate(page: params[:page], per_page: 8)
-			
-
+			@jams = Jam.where(genre: @genre_id).order("created_at DESC").paginate(page: params[:page], per_page: 6)
 		end
 	end
 

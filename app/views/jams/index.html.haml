@@ -9,7 +9,6 @@
 	%h4 Browse by Genre:
 	= link_to "All Genres", jams_path, class: 'genre-tags'
 	- Genre.all.each do |genre|
-		*
 		= link_to genre.name, jams_path(genre: genre.name), class: 'genre-tags'
 
 .row.content-wrapper

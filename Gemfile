@@ -15,6 +15,7 @@ gem 'paperclip', '~> 4.3.0'
 gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.7'
 gem 'cancan'
+gem 'acts_as_follower', '~> 0.2.1'
 
 group :development, :test do
   gem 'byebug'

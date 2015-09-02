@@ -3,7 +3,7 @@
 	.small-6.large-5.columns	
 		%h1= @user.username
 		= image_tag @user.avatar.url(:medium), class: "profile-pic"
-		%h4= current_user.location
+		%h4= @user.location
 		%p 
 			Main Instrument:
 			= @user.main_instrument
@@ -19,6 +19,23 @@
 
 		%p
 			Jams:
+
+		%h5 
+			Following:
+			= @user.following_by_type_count('User')		
+		= @user.all_following.map(&:username).join(" / ")
+
+		%h5 
+			Followers:
+			= @user.followers_by_type_count('User')		
+		= @user.followers.map(&:username).join(" / ")
+		%br/
+
+
+		= link_to "Follow", follow_user_path(@user), class: 'btn followButton'
+		*
+		= link_to "Unfollow", unfollow_user_path(@user), class: 'btn followButton'
+
 
 
 	.small-6.large-7.columns

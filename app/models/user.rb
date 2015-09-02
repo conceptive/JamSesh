@@ -13,10 +13,6 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  def to_param
-    username
-  end
-
 	def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -24,9 +20,13 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end      
+  end
+
+  acts_as_followable
+  acts_as_follower
 
   has_many :jams
   has_many :comments
   belongs_to :jam_skill
+
 end

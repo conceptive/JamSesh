@@ -3,30 +3,39 @@
 	%h1= @jam.title
 .row.content-wrapper
 	.small-6.large-5.columns
-		%h5
-			by 
+		%h6
+			Jam Leader: 
+			%br/ 
 			= link_to @jam.user.username, user_path(@jam.user.id)
 		= link_to image_tag(@jam.user.avatar.url(:thumb), class: "profile-pic" ), user_path(@jam.user.id)
-		%h5
+		%br/
+		%h5.jam-elements
 			Genre:
+			%br/
 			= @jam.genre.name
-		%h5
+		%h5.jam-elements
 			Location: 
+			%br/
 			= @jam.location
-		%h5
+		%h5.jam-elements
 			Preferred Days: 
+			%br/
 			= @jam.date
-		%h5
+		%h5.jam-elements
 			Preferred Time: 
+			%br/
 			= @jam.time
-		%h5
+		%h5.jam-elements
 			Musicians Wanted:
+			%br/
 			= @jam.number_of_musicians
-		%h5
+		%h5.jam-elements
 			Instruments Wanted:
+			%br/
 			= @jam.instrument_types
-		%h5
+		%h5.jam-elements
 			Skill Level:
+			%br/
 			= @jam.jam_skill.name
 		= if user_signed_in?
 			= link_to "Edit", edit_jam_path(@jam)
