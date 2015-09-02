@@ -37,6 +37,10 @@
 			Skill Level:
 			%br/
 			= @jam.jam_skill.name
+		%p.jam-elements
+			Description:
+			%br/
+			= @jam.information
 		- if @jam.user == current_user
 			= link_to "Edit", edit_jam_path(@jam)
 			%span /

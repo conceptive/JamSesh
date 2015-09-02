@@ -375,43 +375,47 @@ header {
 		float: right;
 		padding-top: 0.1rem;
 		a {
-			margin: 0 0 0 0.2rem;
-			color: #ccc;
-			text-decoration: none;
-			&:hover {
-				color: #50A7C7;
-			}
+		margin: 0 0 0 0.4rem;
+		color: #ccc;
+		text-decoration: none;
+		&:hover {
+			color: #50A7C7;
 		}
+	}
 		a:hover {
 			color: $green;
 		}
-		.nav-user {
+	}
+}
+
+.nav-username {
+	float: right;
+	padding: 0.4rem;
+	.nav-user {
 			color: $green;
 		}	
-	.button {
-		padding: .7rem 1.25rem;
-		border: none;
-		border-radius: .3rem;
-		outline: none;
-		background: white;
-		color: #9B9B9B;
-		margin: 0 1rem;
-		-webkit-transition: 0.25s all;
-    -moz-transition: 0.25s all;
-    -ms-transition: 0.25s all;
-    -o-transition: 0.25s all;
-    transition: 0.25s all;
-		}
+}
 
+.nav-menu {
+	float: right;
+	.button {
+	padding: .7rem 1.25rem;
+	border: none;
+	border-radius: .3rem;
+	outline: none;
+	background: white;
+	color: #9B9B9B;
+	margin: 0 1rem;
+	-webkit-transition: 0.25s all;
+  -moz-transition: 0.25s all;
+  -ms-transition: 0.25s all;
+  -o-transition: 0.25s all;
+  transition: 0.25s all;
+	}
 	.button:hover {
 		background: $green;
 		color: #222;
-		}		
-	.button:focus, button:focus {
-		background: $green;
-		color: #222;
-		}		
-	}
+	}		
 }
 
 .f-dropdown {
@@ -443,6 +447,12 @@ header {
 			font-size: 1.8rem;
 		}
 	}
+}
+
+/* New Jam */
+
+#jam_information {
+	height: 150px;
 }
 
 /* Jam Results */

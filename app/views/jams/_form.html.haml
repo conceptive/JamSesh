@@ -11,4 +11,7 @@
 	= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"}
 	%br/
 	%br/
+	= f.input :information, label: "About the Jam"
+	%br/
+	%br/
 	= f.button :submit

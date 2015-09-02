@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902155444) do
+ActiveRecord::Schema.define(version: 20150902201235) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150902155444) do
     t.integer  "user_id"
     t.integer  "genre_id"
     t.integer  "jam_skill_id"
+    t.text     "information"
   end
 
   create_table "skill_levels", force: :cascade do |t|
