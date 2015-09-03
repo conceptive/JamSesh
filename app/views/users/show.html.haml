@@ -45,7 +45,8 @@
 
 
 	.small-6.large-7.columns
-		%p.edit= link_to "Edit Profile", edit_user_registration_path
+		- if @user == current_user
+			%p.edit= link_to "Edit Profile", edit_user_registration_path
 		.clearfix
 		%h4
 			About: 

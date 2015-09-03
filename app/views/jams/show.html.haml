@@ -64,7 +64,7 @@
 							= link_to comment.user.name, user_path(comment.user.id)
 							]
 							.comment-delete 
-								- if user_signed_in?
+								- if comment.user == current_user
 									= link_to "X", [comment.jam, comment], method: :delete, data: { confirm: "Are you sure?" }
 						.comment-date
 						= time_ago_in_words(comment.created_at)

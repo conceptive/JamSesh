@@ -14,9 +14,9 @@
             <%= image_tag @user.avatar.url(:medium), class: "edit-profile-pic" %>
             <br>
             <%= f.label "Change Profile Picture" %>
+            <%= f.file_field :avatar %>
             <%= f.input :name, required: true %>
             <%= f.input :username, required: true %>
-            <%= f.file_field :avatar %>
             <%= f.input :location %>
             <%= f.input :email, required: true %>
             <%= f.input :main_instrument, label: "Select your Main Instrument" %>

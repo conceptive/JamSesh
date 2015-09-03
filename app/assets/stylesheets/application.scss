@@ -20,7 +20,8 @@
 $green       : #9bffa6;
 $lightgray	 : #f5f5f5;
 $darkgrey    : #29252c;
-$white		 : #ffffff;
+$white			 : #ffffff;
+$pink				 : #eb1478;
 
 
 /* General Layout */
@@ -482,7 +483,7 @@ header {
 	  }
 
 	  .button:hover {
-
+			background: #f1378d;
 	  }
 	  p.genre {
 	  }
@@ -696,5 +697,16 @@ footer {
 			margin-left: 12px;
 			font-size: 0.8rem
 		}
+	}
+}
+
+.breadcrumbs {
+	background: $white;
+	border: none;
+	a {
+		color: #a9a9b0;
+	}
+	a:hover {
+		color: $darkgrey;
 	}
 }
