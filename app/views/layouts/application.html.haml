@@ -26,7 +26,8 @@
 					.nav-username
 						%p{"data-dropdown" => "drop1", "aria-controls" => "drop1", "aria-expanded" => "false"}
 							= link_to image_tag(current_user.avatar.url(:medium) , class: "header-profile-pic" ), user_path(current_user)
-							= link_to current_user.name + " ↓", user_path(current_user.id), class:'nav-user'
+							= link_to image_tag('/images/nav_arrow_down.png', width: "10px"), user_path(current_user)
+							/ = link_to current_user.name + " ↓", user_path(current_user.id), class:'nav-user'
 							%ul#drop1.f-dropdown{"data-dropdown-content" => "true", "aria-hidden" => "true"} 
 								%li 
 									= link_to "Profile", user_path(current_user.id)
@@ -40,8 +41,8 @@
 				- else
 					.auth-links
 						= link_to "Browse", jams_path
-						= link_to "Sign in", new_user_session_path
-						= link_to "Sign up", new_user_registration_path, class: "button"			
+						= link_to "Log in", new_user_session_path
+						= link_to "Join", new_user_registration_path, class: "button"			
 = yield
 
 %footer

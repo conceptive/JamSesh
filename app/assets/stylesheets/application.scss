@@ -22,7 +22,7 @@ $lightgray	 : #f5f5f5;
 $darkgrey    : #282828;
 $white			 : #ffffff;
 $pink				 : #eb1478;
-$darkblue	   : #35485f;
+$darkblue	   : #35485f; 
 
 
 
@@ -34,7 +34,8 @@ body {
 
 p, h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	color: $darkgrey;
 }
 
 .row {
@@ -42,11 +43,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .content-wrapper {
-	padding: 14px;
-	h2 {
-		color: #333046;
-		text-align: center;
-	}
+	padding: 4px;
 	p {
 		text-align: center;
 	}
@@ -54,6 +51,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .small-9 {
 	border-right: 1px solid #dddddd;
+}
+
+.title {
+	text-align: center;
+	text-transform: uppercase;
 }
 
 #notice-wrapper {
@@ -125,7 +127,7 @@ p, h1, h2, h3, h4, h5, h6 {
 		background-position: center;
 		top:0;
 		left: 0;
-		background: url('/images/home_header_img.jpg') 100% no-repeat;
+		background: url('/images/home_header_img2.jpg') 100% no-repeat;
 		background-position: top;
 		background-size: cover;
 		width: 100%;
@@ -143,6 +145,7 @@ p, h1, h2, h3, h4, h5, h6 {
   	margin-top: 1rem;
   	a {
   		color: #fff;
+  		text-shadow: 1px 1px #000;
   	}
   	a:hover {
   		color: $green;
@@ -161,6 +164,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	    -ms-transition: 0.25s all;
 	    -o-transition: 0.25s all;
 	    transition: 0.25s all;
+	    text-shadow: none;
   	}
   	.signup-btn:hover {
 			background: $green;
@@ -174,11 +178,15 @@ p, h1, h2, h3, h4, h5, h6 {
 		height: 300px;
 		margin: 14rem auto 0;
 		text-align: center;
+		text-shadow: 1px 3px 0px rgba(0,0,0,0.8);
 		h1 {
 			font-size: 2.6rem;
 			font-weight: 400;
 			letter-spacing: 2px;
 			color: #fff;
+		}
+		p{
+			text-shadow: 1px 1px 0px rgba(0,0,0,1);
 		}
 		span {
 			color: $green;
@@ -197,6 +205,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	    -ms-transition: 0.25s all;
 	    -o-transition: 0.25s all;
 	    transition: 0.25s all;
+	    text-shadow: none;
 		}
 
 		.button:hover {
@@ -211,7 +220,8 @@ p, h1, h2, h3, h4, h5, h6 {
 			right: 1rem;
 			top: 0.5rem;
 			a {
-				color: #fff
+				color: #fff;
+				text-shadow: none;
 			}
 			a:hover {
 				color: $green;
@@ -443,10 +453,14 @@ header {
 	}
 }
 
+/* Username Button */
 .nav-username {
 	float: right;
 	margin-left: .5rem;
 	padding: 0.4rem;
+	a {
+		margin: 0 -.6rem 0 .4rem;
+	}
 	.nav-user {
 			color: #ccc;
 		}	
@@ -455,23 +469,28 @@ header {
 	}
 }
 
-ul#drop1 a {
-	font-size: 1rem;
-	padding: .6rem;
-}
-
-ul#drop1 a:hover {
+ul#drop1 {
+	width: 100px;
+	margin-left: 4px;
+	a {
+		font-size: 1rem;
+		padding: .6rem 1.2rem .6rem .8rem;
+	}
+	a:hover {
 	color: $darkgrey;
+	}
 }
 
-.f-dropdown.open {
+/* Genre Filter */
+
+#drop2 {
 	width: 170px;
-	margin-left: .2rem;
-	border: none
+	border: none;
+	margin-left: -126px;
 }
 
 nav .button  {
-	margin-right: 1rem;
+	margin-right: .4rem;
 	padding: .6rem 1.2rem;
 	border: none;
 	border-radius: .3rem;
@@ -491,9 +510,9 @@ nav .button:hover {
 
 .nav-menu {
 	float: right;
-	border-left: 1px solid $lightgray;
+	border-right: 1px solid $lightgray;
 	padding: 0 1rem;
-	margin: .5rem 0 0 1rem;
+	margin: .5rem 0 0 0;
 	a {
 		padding-left: .8rem;
 	}
@@ -506,8 +525,8 @@ nav .button:hover {
 	height: 250px;
 	margin: 0;
 	margin-top: 60px;
-	background: url('/images/home_header_img.jpg');
-	background-position: center;
+	background: url('/images/home_header_img2.jpg');
+	background-position: bottom;
 	background-size: cover;
 	h2 {
 		text-align: center;
@@ -564,13 +583,21 @@ nav .button:hover {
 
 .results-box {
 	  margin: 1rem 1rem 0.5rem 1rem;
-	  width: 30%;
+	  width: 294px;
 	  float: left;
 	  padding: 0.8rem;
 	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 	  border-radius: 7px;
 	  text-align: center;
 	  background: $lightgray;
+	  p.info {
+	  	text-align: left;
+	  	padding: 0 1rem 1rem;
+	  	margin-bottom: 0;
+	  	img {
+	  		padding: .4rem;
+	  	}
+	  }
 	  h4 a {
 	  	font-size: 1.2rem;
 	  	font-weight: bold;
@@ -580,7 +607,8 @@ nav .button:hover {
 	  	color: #ABB7B7;
 	  }
 	  .button {
-	  	margin: 0 auto;
+	  	text-align: center;
+	  	margin: .5rem auto;
 	  	margin-top: 15px;
 	  	background: #eb1478;
 	  	color: #eeeeee

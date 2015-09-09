@@ -10,7 +10,7 @@
 					%li= link_to genre.name, jams_path(genre: genre.name), class: 'genre-tags'
 
 .row.spacing.content-wrapper
-	%h2 
+	%h2.title 
 		LATEST JAMS
 	- if params[:genre].blank?
 		%p All Genres
@@ -28,19 +28,27 @@
 				%br/
 				by 
 				= link_to jam.user.username, user_path(jam.user.id)
-				%br/
-				%br/
-				Around 
+			%p.info
+				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/9868-200.png", width: "35px")
+				Where:
 				= jam.location
 				%br/ 
+				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/173848-200.png", width: "35px")
+				When:
 				= jam.date
 				%br/
+				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/74778-200.png", width: "35px")
+				Level: 
 				= jam.jam_skill.name
 				%br/
-				Members: 
+				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/11910-200.png", width: "35px")
+				Members Wanted:
 				= jam.number_of_musicians
 				%br/
-				= link_to 'Check it Out', jam, class: 'button'
+				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/91427-200.png", width: "35px")
+				Comments: 
+				= jam.comments.count
+			= link_to 'Check it Out', jam, class: 'button'
 	.clearfix
 	%br/			
 	= will_paginate @jams, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0
