@@ -3,7 +3,7 @@
 	.genre-filter-box
 		%h3{"data-dropdown" => "drop2", "aria-controls" => "drop2", "aria-expanded" => "false"}
 			= link_to "Select Genre", jams_path, class:'genre-filter'
-			= link_to image_tag('http://host.coxmediagroup.com/cop/digital/common/images/arrow_down_rounder_black.png'), user_path(current_user)
+			= link_to image_tag('/images/arrow_down_rounder_black.png')
 			%h4#drop2.f-dropdown.genre-dropdown{"data-dropdown-content" => "true", "aria-hidden" => "true"} 
 				%li= link_to "All Genres", jams_path, class: 'genre-tags'
 				- Genre.all.each do |genre|

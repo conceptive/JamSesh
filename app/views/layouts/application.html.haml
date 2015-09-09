@@ -7,7 +7,6 @@
 	= javascript_include_tag 'vendor/modernizr'
 	%meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
 	%link{:rel => "stylesheet", :href => "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"}
-	%link{:rel => "stylesheet", :href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
 	= csrf_meta_tags
 
 %body
@@ -36,14 +35,13 @@
 								%li
 									= link_to "Sign Out", destroy_user_session_path, method: :delete	
 					.nav-menu
-						
-						= link_to "How it Works", howitworks_path
 						= link_to "Jams", jams_path
 						= link_to "Musicians", musicians_path
 				- else
-					= link_to "Jams", jams_path
-					= link_to "Sign in", new_user_session_path
-					= link_to "Sign up", new_user_registration_path, class: "button"			
+					.auth-links
+						= link_to "Browse", jams_path
+						= link_to "Sign in", new_user_session_path
+						= link_to "Sign up", new_user_registration_path, class: "button"			
 = yield
 
 %footer

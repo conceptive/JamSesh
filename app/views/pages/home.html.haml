@@ -8,7 +8,7 @@
 				= link_to "Log Out", destroy_user_session_path, method: :delete
 			%h1 
 				Welcome Back, 
-				= current_user.name
+				%span= current_user.name
 				%br/
 				= link_to "Browse Sessions", jams_path, class: "button"
 				or
@@ -20,31 +20,31 @@
 			%h1
 				Find Musicians to 
 				%span Jam 
-				With in NYC.
-				%p A Social Network for musicians who just want to jam and experiment.
+				With in Your City.
+				%p A social network for musicians who just want to jam and experiment.
 				= link_to "Browse Jams", jams_path, class: "button"
 				%p
 					Already have an account?
 					= link_to "Login", new_user_session_path, class: "home-login"
-	.why-jam
-		.row 
-			.large-6.columns
-				.home-guitar
-			.large-6.columns
-				%h1 Why Jam with Other Musicians?
-				%p Jamming is great for musicians who are interested in networking with other like minded people, from beginners to professionals and in all genres.  Attending open jams not only lets you collaborate with other musicians, but its a great way to find potential band members, and to test out and get feedback on new songs that you are working on!
 
-				= link_to "Start Jammin'", jams_path, class: "button"  
 	.how-it-works
 		.row
 			%h1 How it Works
 			.small-2.large-4.columns
-				= image_tag "https://drooble.com/Drooble/images/jam_online.png"
+				= image_tag "https://d30y9cdsu7xlg0.cloudfront.net/png/108261-200.png"
 				%h4 Create Profile
-			.small-2.large-4.columns
-				= image_tag "https://drooble.com/Drooble/images/lessons.png"
+			.small-4.large-4.columns
+				= image_tag "https://d30y9cdsu7xlg0.cloudfront.net/png/144340-200.png"
 				%h4 Talk to Musicians
-			.small-2.large-4.columns
-				= image_tag "https://drooble.com/Drooble/images/community.png"
-				%h4 Start jammin'
-
+			.small-6.large-4.columns
+				= image_tag "https://d30y9cdsu7xlg0.cloudfront.net/png/38990-200.png"
+				%h4 Start Jammin'
+		.spacing
+		
+	.footer-home
+		= link_to "", jams_path, class: "logo"
+		%nav.breadcrumbs
+			= link_to "About", root_path
+			= link_to "Privacy Policy", root_path
+			= link_to "Terms & Conditions", root_path
+			= link_to "Contact", root_path
