@@ -1,12 +1,12 @@
 = simple_form_for @jam do |f|
 	= f.label "Choose a Genre"
 	= f.collection_select :genre_id, Genre.all, :id, :name, { promt: "Choose a Genre"}
-	= f.input :title
-	= f.input :location, label: "Preferred Location"
-	= f.input :date, label: "Preferred Day/Days"
-	= f.input :time
-	= f.input :number_of_musicians
-	= f.input :instrument_types
+	= f.input :title, :placeholder =>  "90s Rock Jam Sessions"
+	= f.input :location, label: "Preferred Location" , :placeholder => "Brooklyn, Manhattan, NYC, Sweatshop Studios..."
+	= f.input :date, label: "Preferred Day/Days", :placeholder =>  "Wed & Thrus, Weekends, Any Day..."
+	= f.input :time, label: "Time", :placeholder =>  "Daytime, 6-9 PM, All Day..."
+	= f.input :number_of_musicians, label: "Number of Musicians", :placeholder =>  "1,2,3,4,5,6..."
+	= f.input :instrument_types, label: "Instruments Wanted", :placeholder =>  "Drums, Guitar, Bass, Vocals, Banjo, DJ"
 	= f.label "Preferred Skill Level"
 	= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"}
 	%br/

@@ -1,20 +1,17 @@
 .sub-header
-	%h2 
-		Find a 
-		%span Jam Session 
-		in Your Area.
+	%h2 Find Jam Sessions in NYC.
+	.genre-filter-box
+		%h3{"data-dropdown" => "drop2", "aria-controls" => "drop2", "aria-expanded" => "false"}
+			= link_to "Select Genre", jams_path, class:'genre-filter'
+			= link_to image_tag('http://host.coxmediagroup.com/cop/digital/common/images/arrow_down_rounder_black.png'), user_path(current_user)
+			%h4#drop2.f-dropdown.genre-dropdown{"data-dropdown-content" => "true", "aria-hidden" => "true"} 
+				%li= link_to "All Genres", jams_path, class: 'genre-tags'
+				- Genre.all.each do |genre|
+					%li= link_to genre.name, jams_path(genre: genre.name), class: 'genre-tags'
 
-.wrapper.filter-box
-	%br/
-	%h4 Browse by Genre:
-	= link_to "All Genres", jams_path, class: 'genre-tags'
-	- Genre.all.each do |genre|
-		= link_to genre.name, jams_path(genre: genre.name), class: 'genre-tags'
-
-.row.content-wrapper
+.row.spacing.content-wrapper
 	%h2 
-		Lastest Jams
-	%br/
+		LATEST JAMS
 	- if params[:genre].blank?
 		%p All Genres
 	- else
@@ -29,7 +26,7 @@
 			%p
 				= image_tag jam.user.avatar.url(:thumb), class: "profile-pic"
 				%br/
-				by: 
+				by 
 				= link_to jam.user.username, user_path(jam.user.id)
 				%br/
 				%br/
@@ -43,7 +40,7 @@
 				Members: 
 				= jam.number_of_musicians
 				%br/
-				= link_to 'Join this Jam', jam, class: 'button'
+				= link_to 'Check it Out', jam, class: 'button'
 	.clearfix
 	%br/			
 	= will_paginate @jams, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0

@@ -14,20 +14,27 @@
  *= require_self
  *= require foundation_and_overrides
  */
-
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 @import "foundation_and_overrides";
 
 $green       : #9bffa6;
 $lightgray	 : #f5f5f5;
-$darkgrey    : #29252c;
+$darkgrey    : #282828;
 $white			 : #ffffff;
 $pink				 : #eb1478;
+$darkblue	   : #35485f;
+
 
 
 /* General Layout */
 body {
-	font-family: Helvetica, sans-serif;
-	font-weight: 300;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	letter-spacing: 1px
 }
 
 .row {
@@ -35,10 +42,13 @@ body {
 }
 
 .content-wrapper {
-	background: $lightgray;
 	padding: 14px;
 	h2 {
 		color: #333046;
+		text-align: center;
+	}
+	p {
+		text-align: center;
 	}
 }
 
@@ -67,7 +77,7 @@ body {
 .logo {
 		display: block;
 		float: left;
-		background: url('/images/logo_hi_res.png') no-repeat;
+		background: url('/images/logo_hi_res3.png') no-repeat;
 		background-size: 100%; 
 		width: 190px;
 		height: 38px;
@@ -111,29 +121,62 @@ body {
   	-o-transition: background .5s ease-out;
   	transition: background .5s ease-out;
   	.home-header {
-  		position: absolute;
-  		background-position: bottom;
+  		position: fixed;
+  		background-position: center;
   		top:0;
   		left: 0;
-  		background: url('/images/home_header.jpg') 100% no-repeat;
+  		background: url('/images/home_header_img.jpg') 100% no-repeat;
+  		background-position: top;
   		background-size: cover;
   		width: 100%;
-  		height: 500px;
+  		height: 700px;
   		.logo {
   			margin-left: 0.8rem;
   			margin-top: 0.4rem;
   		}
   	}
+  .home-menu-right {
+  	float: right;
+  	position: fixed;
+  	top: 0;
+  	right: 0;
+  	margin-top: 1rem;
+  	a {
+  		color: #fff;
+  	}
+  	a:hover {
+  		color: $green;
+  	}
+  	.signup-btn {
+  		padding: .50rem .50rem;
+			border-radius: .3rem;
+			border: 1px solid #ccc;
+			outline: none;
+			background: white;
+			color: #9B9B9B;
+			margin: 0.8rem 1rem;
+			font-size: 1rem;
+			-webkit-transition: 0.25s all;
+	    -moz-transition: 0.25s all;
+	    -ms-transition: 0.25s all;
+	    -o-transition: 0.25s all;
+	    transition: 0.25s all;
+  	}
+  	.signup-btn:hover {
+			background: $green;
+			color: #222;
+		}
+  }
 	.welcome {
 		position: relative;
 		z-index: 9999 !important;
-		width: 700px;
+		width: 900px;
 		height: 300px;
-		margin: 11rem auto 0;
+		margin: 14rem auto 0;
 		text-align: center;
 		h1 {
 			font-size: 2.6rem;
-			font-weight: 500;
+			font-weight: 400;
 			letter-spacing: 2px;
 			color: #fff;
 		}
@@ -184,6 +227,7 @@ body {
 	height: 500px;
 	background: $white;
 	padding-top: 40px;
+	margin-top: 120px;
 	h1 {
 		text-align: center;
 		margin-top: 60px;
@@ -361,7 +405,7 @@ header {
 	width: 100%;
 	height: 60px;
 	padding: 0.45rem 1rem;
-	background: #29252c;
+	background: $darkgrey;
 	.button {
 			margin-right: 0;
 		}
@@ -391,39 +435,57 @@ header {
 
 .nav-username {
 	float: right;
+	margin-left: .5rem;
 	padding: 0.4rem;
 	.nav-user {
-			color: $green;
+			color: #ccc;
 		}	
+	.nav-user:hover {
+		color: $green;
+	}
 }
 
-.nav-menu {
-	float: right;
-	.button {
-	padding: .7rem 1.25rem;
+ul#drop1 a {
+	font-size: 1rem;
+	padding: .6rem;
+}
+
+ul#drop1 a:hover {
+	color: $darkgrey;
+}
+
+.f-dropdown.open {
+	width: 170px;
+	margin-left: .2rem;
+	border: none
+}
+
+nav .button  {
+	margin-right: 1rem;
+	padding: .6rem 1.2rem;
 	border: none;
 	border-radius: .3rem;
 	outline: none;
-	background: white;
+	background: $lightgray !important;
 	color: #9B9B9B;
-	margin: 0 1rem;
 	-webkit-transition: 0.25s all;
   -moz-transition: 0.25s all;
   -ms-transition: 0.25s all;
   -o-transition: 0.25s all;
   transition: 0.25s all;
-	}
-	.button:hover {
-		background: $green;
-		color: #222;
-	}		
 }
 
-.f-dropdown {
-	width: 130px;
-	max-width: 130px;
-	a:hover {
-		color: $darkgrey;
+nav .button:hover {
+	background: $green !important
+}
+
+.nav-menu {
+	float: right;
+	border-left: 1px solid $lightgray;
+	padding: 0 1rem;
+	margin: .5rem 0 0 1rem;
+	a {
+		padding-left: .8rem;
 	}
 }
 
@@ -434,20 +496,48 @@ header {
 	height: 250px;
 	margin: 0;
 	margin-top: 60px;
-	background: url('/images/subheader.jpg');
+	background: url('/images/home_header_img.jpg');
+	background-position: center;
 	background-size: cover;
 	h2 {
 		text-align: center;
-		font-size: 2.2rem;
-		color: white;
-		padding: 5rem 0;
-		span {
-			background-color: $green;
-			color: $darkgrey;
-			padding: 0.3rem 0.8rem;
-			font-size: 1.8rem;
+		color: $white;
+		padding: 50px 0 0 0;
+	}
+	.genre-filter-box {
+		width: 300px;
+		height: 100px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 1.8rem;
+		padding: 0;
+		color: $darkgrey;
+		h3 {
+			padding: .5rem 1rem;
+			background: $green;
+			border-radius: 5px;
+			a:hover {
+				color: $darkgrey;
+			}
+			a:focus {
+				color: $darkgrey;
+			}
+			img {
+				width: 40px;
+			}
 		}
 	}
+}
+
+.genre-dropdown {
+	height: 400px;	
+}
+.genre-dropdown li {
+	width: 18.3rem !important;
+	background: $white;
+	font-size: 1.2rem;
+	padding: .5rem;
+	border: 1px solid $lightgray;
 }
 
 /* New Jam */
@@ -470,20 +560,27 @@ header {
 	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 	  border-radius: 7px;
 	  text-align: center;
-	  background: $white;
+	  background: $lightgray;
 	  h4 a {
 	  	font-size: 1.2rem;
 	  	font-weight: bold;
-	  	color: #333046;
+	  	padding: 1rem;
+	  }
+	  h4 a:hover {
+	  	color: #ABB7B7;
 	  }
 	  .button {
+	  	margin: 0 auto;
 	  	margin-top: 15px;
 	  	background: #eb1478;
 	  	color: #eeeeee
 	  }
-
+		a:hover {
+			color: #ABB7B7;
+		}
 	  .button:hover {
 			background: #f1378d;
+			color: #eeeeee;
 	  }
 	  p.genre {
 	  }
@@ -500,42 +597,6 @@ header {
 
 .results-box:hover {
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-}
-
-.filter-box {
-	padding: 0 1rem 1rem;
-	background: $lightgray;
-	margin: 2rem auto;
-	border-radius: 7px;
-	.genre-tags {
-		padding: .6rem .6rem;
-		background: #333046;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px 5px 0;
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 0.75rem;
-    vertical-align: middle;
-    white-space: nowrap;
-    -webkit-transition: 0.25s all;
-    -moz-transition: 0.25s all;
-    -ms-transition: 0.25s all;
-    -o-transition: 0.25s all;
-    transition: 0.25s all;
-	}
-	.genre-tags:hover {
-		background: $green;
-		color: #333046;
-	}
 }
 
 .wrapper {
@@ -556,13 +617,97 @@ header {
 	}
 }
 
-/* Jam Profile */
+/* Show Jam */
 
-.jam-elements {
-	margin-top: 1rem;
+.jam-info-box {
+	border-radius: 15px;
+	border: 1px solid #ccc;
+	padding: 1rem 2rem;
+	background: #282828;
+	h1 {
+		color: $lightgray;
+		text-align: center;
+	}
+	h6 {
+		color: $lightgray;
+	}
+	a {
+		color: $lightgray;
+	}
+	.jam-username {
+		color: #ccc;
+	}
+	.jam-username:hover {
+		color: $green;
+	}
+	.jam-elements {
+	margin-top: .2rem;
+	padding: .2rem;
+	color: $lightgray;
+	}
 }
 
+.modify-box {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	.edit-jam:hover {
+		color: $green;
+	}
+	.edit-jam:before {
+	content: url(http://umamikushi.com/images/navIcons/pencil.png);
+	}
+	.delete-jam:hover {
+		color: $green;
+	}
+	.delete-jam:before {
+	content: url(https://cdn3.iconfinder.com/data/icons/uidesignicons/delete.png);
+	}
+}
+
+
+
 /* Profile */
+
+.profile-sub-header {
+	width: 100%;
+	height: 300px;
+	background: $lightgray !important;
+	background-size: cover;
+	margin: 5rem auto;
+	margin-top: 60px;
+	img {
+		width: 200px;
+	}
+}
+.user-profile-wrap {
+	padding-top: 2rem;
+	background: $lightgray;
+	width: 100%;
+	height: 300px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 0 !important;
+}
+
+.follow-box {
+	width: 100%;
+	margin: auto;
+	.followers, .following {
+		font-size: 1rem;
+		border: 1px solid $darkgrey;
+		width: 120px;
+		padding: .6rem;
+		text-align: center;
+		float: left;
+		margin: .6rem;
+	}
+}
+
+.follow-btn {
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+}
 
 .edit {
 	float: right;
@@ -620,8 +765,9 @@ header {
 /* Comments */
 
 .comments-box {
-	border-left: 1px solid $white;
+	border-right: 1px solid $lightgray;
 	padding: .5rem 1.5rem;
+	margin: 0 0 4rem 0;
 }
 
 #comments {
@@ -645,16 +791,18 @@ header {
 			font-size: .9rem;
 			color: #333233;
 			.username {
-				font-size: 0.8rem;
+				font-size: 0.9rem;
 				font-weight: bold;
 				.comment-delete {
-					border: 1px solid $darkgrey;
 					padding: 0 .3rem;
 					border-radius: 50%;
 					float: right;
 					margin-right: 1rem;
 					font-size: .8rem
 				}
+			}
+			.comment-date {
+					font-size: 0.7rem;
 			}
 			.mini-avatar {
 			border-radius: 50%;
@@ -666,13 +814,26 @@ header {
 		.content {
 			margin-left: 4.2rem;
 			margin-top: 1rem;
-			font-size: 1rem
+			font-size: 0.95rem
 		}
 	
 	}
 }
 .comment_content textarea {
 		height: 100px;
+}
+
+.comment-button {
+	padding: .7rem 1.25rem;
+	border-radius: .3rem;
+	outline: none;
+	color: #9B9B9B;
+	margin: 0 1rem 1rem 0;
+	-webkit-transition: 0.25s all;
+  -moz-transition: 0.25s all;
+  -ms-transition: 0.25s all;
+  -o-transition: 0.25s all;
+  transition: 0.25s all;
 }
 
 /* Footer */

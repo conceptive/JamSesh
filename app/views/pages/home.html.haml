@@ -14,13 +14,14 @@
 				or
 				= link_to "Create your Own", new_jam_path, class: "button"
 		- else
+			.home-menu-right
+				= link_to "Log in", new_user_session_path
+				= link_to "Sign up", new_user_registration_path, class: "signup-btn"	
 			%h1
-				Find Other Musicians 
-				%br/
-				to 
+				Find Musicians to 
 				%span Jam 
-				with in NYC.
-				%br/
+				With in NYC.
+				%p A Social Network for musicians who just want to jam and experiment.
 				= link_to "Browse Jams", jams_path, class: "button"
 				%p
 					Already have an account?

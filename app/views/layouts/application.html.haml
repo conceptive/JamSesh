@@ -19,14 +19,15 @@
 			%p.alert= alert
 	
 	%header
-		.header-wrapper
+		.row.header-wrapper
 			= link_to "", jams_path, class: "logo"
 			%nav
 				- if user_signed_in?
+					= link_to "Start a Jam", new_jam_path, class: "button"
 					.nav-username
 						%p{"data-dropdown" => "drop1", "aria-controls" => "drop1", "aria-expanded" => "false"}
-							= link_to current_user.name + " +", user_path(current_user.id), class:'nav-user'
 							= link_to image_tag(current_user.avatar.url(:medium) , class: "header-profile-pic" ), user_path(current_user)
+							= link_to current_user.name + " ↓", user_path(current_user.id), class:'nav-user'
 							%ul#drop1.f-dropdown{"data-dropdown-content" => "true", "aria-hidden" => "true"} 
 								%li 
 									= link_to "Profile", user_path(current_user.id)
@@ -35,8 +36,8 @@
 								%li
 									= link_to "Sign Out", destroy_user_session_path, method: :delete	
 					.nav-menu
-						= link_to "Create Jam", new_jam_path, class: "button"
 						
+						= link_to "How it Works", howitworks_path
 						= link_to "Jams", jams_path
 						= link_to "Musicians", musicians_path
 				- else
@@ -46,7 +47,7 @@
 = yield
 
 %footer
-	.wrapper
+	.row.wrapper
 		= link_to "", jams_path, class: "logo"
 		%nav.breadcrumbs
 			= link_to "About", root_path

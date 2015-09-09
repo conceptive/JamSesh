@@ -1,50 +1,75 @@
-.wrapper
+.row.wrapper
 	.spacing
-	%h1= @jam.title
-.row.content-wrapper
+	= link_to "← Back", jams_path
+.row
 	.small-6.large-5.columns
-		%h6
-			Jam Leader: 
-			%br/ 
-			= link_to @jam.user.username, user_path(@jam.user.id)
-		= link_to image_tag(@jam.user.avatar.url(:thumb), class: "profile-pic" ), user_path(@jam.user.id)
-		%br/
-		%h5.jam-elements
-			Genre:
-			%br/
-			= @jam.genre.name
-		%h5.jam-elements
-			Location: 
-			%br/
-			= @jam.location
-		%h5.jam-elements
-			Preferred Days: 
-			%br/
-			= @jam.date
-		%h5.jam-elements
-			Preferred Time: 
-			%br/
-			= @jam.time
-		%h5.jam-elements
-			Musicians Wanted:
-			%br/
-			= @jam.number_of_musicians
-		%h5.jam-elements
-			Instruments Wanted:
-			%br/
-			= @jam.instrument_types
-		%h5.jam-elements
-			Skill Level:
-			%br/
-			= @jam.jam_skill.name
-		%p.jam-elements
-			Description:
-			%br/
-			= @jam.information
-		- if @jam.user == current_user
-			= link_to "Edit", edit_jam_path(@jam)
-			%span /
-			= link_to "Delete Jam", jam_path(@jam), method: :delete, data: { confirm: "Are you sure?" }
+		.jam-info-box
+			.modify-box
+				- if @jam.user == current_user
+					= link_to " Edit", edit_jam_path(@jam), class: "edit-jam"
+					%span /
+					= link_to " Delete", jam_path(@jam), class: "delete-jam", method: :delete, data: { confirm: "Are you sure?" }
+			.clearfix
+			%h1= @jam.title
+			.small-6.large-5.columns
+				= link_to image_tag(@jam.user.avatar.url(:thumb), class: "profile-pic" ), user_path(@jam.user.id)
+			.small-6.large-7.columns	
+				%h6
+					Jam Leader: 
+				%h6
+					= link_to @jam.user.username, user_path(@jam.user.id), class: "jam-username"
+				%h6= @jam.user.main_instrument
+			.clearfix
+			%hr/
+			.row
+				.large-6.columns
+					%p.jam-elements
+						Genre:
+				.large-6.columns
+					%p.jam-elements
+						= @jam.genre.name
+				.large-6.columns
+					%p.jam-elements
+						Location: 
+				.large-6.columns
+					%p.jam-elements
+						= @jam.location
+				.large-6.columns
+					%p.jam-elements
+						Preferred Days:
+				.large-6.columns
+					%p.jam-elements
+						= @jam.date
+				.large-6.columns 
+					%p.jam-elements
+						Preferred Time: 
+				.large-6.columns 
+					%p.jam-elements
+						= @jam.time
+				.large-6.columns
+					%p.jam-elements
+						Musicians Wanted:
+				.large-6.columns
+					%p.jam-elements
+						= @jam.number_of_musicians
+				.clearfix
+				.large-6.columns
+					%p.jam-elements
+						I Need:
+				.large-6.columns
+					%p.jam-elements
+						= @jam.instrument_types					
+				.large-6.columns
+					%p.jam-elements
+						Skill Level:
+				.large-6.columns
+					%p.jam-elements
+						= @jam.jam_skill.name
+				.clearfix
+				%p.jam-elements
+					Description:
+					%br/
+					= @jam.information
 
 	.small-6.large-7.columns.comments-box	
 		%h4 Start the Conversation
@@ -52,7 +77,10 @@
 		- if user_signed_in?
 			= render "comments/form"
 		- else
-			%h5 You need to login to post comments.	
+			%h5 
+				You need to 
+				= link_to "login", new_user_session_path
+				to post comments.	
 		%p.comment-count= pluralize(@jam.comments.count, "Comment")
 		#comments
 			- @comments.each do |comment|
@@ -60,15 +88,13 @@
 					.userbox
 						= link_to image_tag(comment.user.avatar.url(:thumb), class: 'mini-avatar' ), user_path(comment.user.id)
 						.username
-							[ 
 							= link_to comment.user.name, user_path(comment.user.id)
-							]
 							.comment-delete 
 								- if comment.user == current_user
 									= link_to "X", [comment.jam, comment], method: :delete, data: { confirm: "Are you sure?" }
 						.comment-date
-						= time_ago_in_words(comment.created_at)
-						ago.
+							= time_ago_in_words(comment.created_at)
+							ago.
 						
 					.content
 						= comment.content		

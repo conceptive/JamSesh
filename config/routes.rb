@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   get "users/show"
   get "pages/musicians"
+  get "pages/howitworks"
   get 'musicians' => 'pages#musicians', as: :musicians
+  get 'howitworks' => 'pages#howitworks', as: :howitworks
 end
