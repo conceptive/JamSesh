@@ -19,7 +19,7 @@
 
 $green       : #9bffa6;
 $lightgray	 : #f5f5f5;
-$darkgrey    : #282828;
+$darkgrey    : #29252c;
 $white			 : #ffffff;
 $pink				 : #eb1478;
 $darkblue	   : #35485f;
@@ -191,7 +191,7 @@ p, h1, h2, h3, h4, h5, h6 {
 		height: 300px;
 		margin: 14rem auto 0;
 		text-align: center;
-		text-shadow: 1px 3px 0px rgba(0,0,0,0.8);
+		text-shadow: 1px 3px 0px #29252c;
 		h1 {
 			font-size: 2.6rem;
 			font-weight: 400;
@@ -363,6 +363,10 @@ p, h1, h2, h3, h4, h5, h6 {
 	color: $green !important;
 }
 
+.overlay-p {
+	color: $white;
+}
+
 /* Global Elements */
 
 a {
@@ -409,6 +413,7 @@ li {
   -ms-transition: 0.25s all;
   -o-transition: 0.25s all;
   transition: 0.25s all;
+  border: none;
 }
 
 .button:hover, button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{
