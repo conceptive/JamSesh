@@ -24,30 +24,44 @@
 			%p.genre
 				= jam.genre.name
 			%p
-				= image_tag jam.user.avatar.url(:thumb), class: "profile-pic"
+				= image_tag jam.user.avatar.url(:thumb), class: "index-profile-pic"
 				%br/
 				by 
 				= link_to jam.user.username, user_path(jam.user.id)
+			
 			%p.info
 				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/9868-200.png", width: "35px")
-				Where:
+				Where >
 				= jam.location
 				%br/ 
 				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/173848-200.png", width: "35px")
-				When:
+				When >
 				= jam.date
 				%br/
-				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/74778-200.png", width: "35px")
-				Level: 
-				= jam.jam_skill.name
-				%br/
 				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/11910-200.png", width: "35px")
-				Members Wanted:
+				Members Wanted >
 				= jam.number_of_musicians
 				%br/
 				=image_tag("https://d30y9cdsu7xlg0.cloudfront.net/png/91427-200.png", width: "35px")
-				Comments: 
+				Comments > 
 				= jam.comments.count
+
+			%h5.jam_skill
+				- if jam.jam_skill.name == "Beginner"
+					Level:
+					= image_tag('/images/rock_hand_small.png', width: "15px")
+					= image_tag('/images/rock_hand_grey.png', width: "15px")
+					= image_tag('/images/rock_hand_grey.png', width: "15px")
+				- if jam.jam_skill.name == "Intermediate"
+					Level:
+					= image_tag('/images/rock_hand_small.png', width: "15px")
+					= image_tag('/images/rock_hand_small.png', width: "15px")
+					= image_tag('/images/rock_hand_grey.png', width: "15px")
+				- if jam.jam_skill.name == "Advanced"
+					Level:
+					= image_tag('/images/rock_hand_small.png', width: "15px")
+					= image_tag('/images/rock_hand_small.png', width: "15px")
+					= image_tag('/images/rock_hand_small.png', width: "15px")
 			= link_to 'Check it Out', jam, class: 'button'
 	.clearfix
 	%br/			

@@ -23,6 +23,26 @@
 			.clearfix
 			%hr/
 			.row
+				%h3.jam-skill
+					- if @jam.jam_skill.name == "Beginner"
+						Level:
+						= image_tag('/images/rock_hand.png', width: "20px")
+						= image_tag('/images/rock_hand_white.png', width: "20px")
+						= image_tag('/images/rock_hand_white.png', width: "20px")
+						%span{"data-tooltip" => "true", "aria-haspopup" => "true", "class" => "has-tip", "title" =>  "Beginner: No need to know a lot, maybe some covers and just be familiar with the notes. "} ?
+					- if @jam.jam_skill.name == "Intermediate"
+						Level:
+						= image_tag('/images/rock_hand.png', width: "20px")
+						= image_tag('/images/rock_hand.png', width: "20px")
+						= image_tag('/images/rock_hand_white.png', width: "20px")
+						%span{"data-tooltip" => "true", "aria-haspopup" => "true", "class" => "has-tip", "title" =>  "Intermediate: You must be able to keep up with chords, times, changes and overall improvization. Must know notes and/or times"} ?
+					- if @jam.jam_skill.name == "Advanced"
+						Level:
+						= image_tag('/images/rock_hand.png', width: "20px")
+						= image_tag('/images/rock_hand.png', width: "20px")
+						= image_tag('/images/rock_hand.png', width: "20px")
+						%span{"data-tooltip" => "true", "aria-haspopup" => "true", "class" => "has-tip", "title" =>  "Advanced: Must know your instrument by heart. Must know all music vocabulary and be able to play a wide range of styles."} ?
+				%br/
 				.large-6.columns
 					%p.jam-elements
 						Genre:
@@ -59,13 +79,8 @@
 						I Need:
 				.large-6.columns
 					%p.jam-elements
-						= @jam.instrument_types					
-				.large-6.columns
-					%p.jam-elements
-						Skill Level:
-				.large-6.columns
-					%p.jam-elements
-						= @jam.jam_skill.name
+						= @jam.instrument_types
+
 				.clearfix
 				%p.jam-elements
 					Description:

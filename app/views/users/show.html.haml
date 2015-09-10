@@ -3,14 +3,33 @@
 		.small-2.large-4.columns	
 			= image_tag @user.avatar.url(:medium), class: "profile-pic"
 		.small-4.large-4.columns
-			%h1.title= @user.username
-			%h4 
+			%h2.title= @user.username
+			%h5 
 				= @user.main_instrument
 				*
 				= @user.location
-			%h5
+			%h5.user-skill
 				Skill Level: 
-				= @user.jam_skill.name
+				%br/
+				- if @user.jam_skill.name == "Beginner"
+					= @user.jam_skill.name
+					%br/
+					= image_tag('/images/rock_hand_small.png', width: "40px")
+					= image_tag('/images/rock_hand_grey.png', width: "40px")
+					= image_tag('/images/rock_hand_grey.png', width: "40px")
+					= @user.jam_skill.name
+				- if @user.jam_skill.name == "Intermediate"
+					= @user.jam_skill.name
+					%br/
+					= image_tag('/images/rock_hand_small.png', width: "40px")
+					= image_tag('/images/rock_hand_small.png', width: "40px")
+					= image_tag('/images/rock_hand_grey.png', width: "40px")
+				- if @user.jam_skill.name == "Advanced"
+					= @user.jam_skill.name
+					%br/
+					= image_tag('/images/rock_hand_small.png', width: "40px")
+					= image_tag('/images/rock_hand_small.png', width: "40px")
+					= image_tag('/images/rock_hand_small.png', width: "40px")
 		.small-6.large-4.columns
 			.follow-box
 				%h5.following 
@@ -27,7 +46,7 @@
 				= link_to "Follow", follow_user_path(@user), class: 'follow-btn button'
 				= link_to "Unfollow", unfollow_user_path(@user), class: 'follow-btn button'
 .spacing
-.row.content-wrapper.spacing
+.row.spacing
 	.small-6.large-5.columns	
 		%p 
 			Main Instrument:
@@ -36,26 +55,31 @@
 		%p
 			Other Instruments:
 			%br/
-			= @user.user_instruments
+			- if @user.user_instruments.blank?
+				No other instruments.
+			- else
+				= @user.user_instruments
 		%p
 			Favorite Genres: 
 			%br/
-			= @user.styles
+			- if @user.styles.blank?
+				No favorite genres yet.	
+			- else			
+				= @user.styles
 		%p
 			Influences: 
 			%br/
-			= @user.influences
+			- if @user.influences.blank?
+				No influences yet.
+			- else
+				= @user.influences	
 		%p
 			Equipment: 
 			%br/
-			= @user.equipment
-		%p
-			Skill Level: 
-			%br/
-			= @user.jam_skill.name
-
-		%p
-			Jams:
+			- if blank?
+				= @user.equipment
+			- else
+				No equipment yet.
 	
 		/ = @user.all_following.map(&:username).join(" / ")
 	
@@ -73,10 +97,13 @@
 		- if @user == current_user
 			%p.edit= link_to "Edit Profile", edit_user_registration_path
 		.clearfix
-		%h4
-			About: 
+		%h4.title
+			About 
 			%br/
 		%p
-			= @user.bio
+			- if @user.bio.blank?
+				No bio yet.
+			- else
+				= @user.bio
 
 
