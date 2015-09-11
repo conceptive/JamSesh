@@ -16,5 +16,5 @@
 !/log/.keep
 /tmp
 
-# Ignore application configuration
-/.env
+# Ignore files which contain AWS keys
+.env

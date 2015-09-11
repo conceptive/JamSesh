@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   require 'aws-sdk-v1'
   require 'aws-sdk'
   has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
+
+
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 	def self.find_first_by_auth_conditions(warden_conditions)
