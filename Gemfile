@@ -18,9 +18,8 @@ gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.7'
 gem 'acts_as_follower', '~> 0.2.1'
 gem 'cancan'
-gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.6'
 
 group :development, :test do
   gem 'byebug'
