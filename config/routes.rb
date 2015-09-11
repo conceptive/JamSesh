@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :genre
   resources :jams do
-  	resources :comments
+  resources :comments
   end
   
   root 'pages#home'
