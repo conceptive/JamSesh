@@ -10,8 +10,6 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates :username, length: { in: 4..20 }
 
-  require 'aws-sdk-v1'
-  require 'aws-sdk'
   has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
 
 
