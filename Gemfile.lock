@@ -68,10 +68,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dotenv (2.0.2)
-    dotenv-rails (2.0.2)
-      dotenv (= 2.0.2)
-      railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.6.0)
     foundation-rails (5.5.2.1)
@@ -198,12 +194,11 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_follower (~> 0.2.1)
-  aws-sdk
+  aws-sdk (~> 1.6)
   byebug
   cancan
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.2)
-  dotenv-rails
   foundation-rails
   haml (~> 4.0.7)
   jbuilder (~> 2.0)
