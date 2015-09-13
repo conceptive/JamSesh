@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require s3_direct_upload
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
