@@ -19,7 +19,6 @@
 # Ignore
 Procfile
 # Ignore application configuration
-.env
 
-config/s3.yml
-config/secrets.yml
+/config/s3.yml
+/config/secrets.yml
