@@ -38,17 +38,17 @@ GEM
       tzinfo (~> 1.1)
     acts_as_follower (0.2.1)
     arel (6.0.3)
-    aws-sdk (2.1.20)
-      aws-sdk-resources (= 2.1.20)
-    aws-sdk-core (2.1.20)
-      jmespath (~> 1.0)
-    aws-sdk-resources (2.1.20)
-      aws-sdk-core (= 2.1.20)
+    aws-sdk (1.66.0)
+      aws-sdk-v1 (= 1.66.0)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (6.0.2)
+    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -68,10 +68,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dotenv (2.0.2)
-    dotenv-rails (2.0.2)
-      dotenv (= 2.0.2)
-      railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.6.0)
     foundation-rails (5.5.2.1)
@@ -85,8 +81,6 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jmespath (1.0.2)
-      multi_json (~> 1.0)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -191,11 +185,11 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_follower (~> 0.2.1)
-  aws-sdk (~> 2.1.20)
+  aws-sdk (< 2.0)
   byebug
+  cancan
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.2)
-  dotenv-rails
   foundation-rails
   haml (~> 4.0.7)
   jbuilder (~> 2.0)
