@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :username, length: { in: 4..20 }
 
   has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png",
-                    :storage => :s3, :bucket => "jamseshpro"
+                    :s3_credentials => S3_CREDENTIALS
 
   validates_attachment_content_type :avatar, :content_type => ['image/gif', 'image/jpeg', 'image/png', 'image/x-ms-bmp']
 

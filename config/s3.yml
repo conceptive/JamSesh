@@ -1,12 +1,8 @@
-development: &DEFAULTS
+development:
+  access_key_id: AKIAJBKNN5KVMJ4CYDWA
+  secret_access_key: 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
   bucket: jamseshpro
-  access_key_id: <%= ENV['AKIAJBKNN5KVMJ4CYDWA'] %>
-  secret_access_key: <%= ENV['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'] %>
-
-test:
-  <<: *DEFAULTS
-  bucket: myapp_test
-
 production:
-  <<: *DEFAULTS
-  bucket: myapp
+  access_key_id: AKIAJBKNN5KVMJ4CYDWA
+  secret_access_key: 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
+  bucket: jamseshpro

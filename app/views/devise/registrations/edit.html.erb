@@ -4,7 +4,7 @@
     <br>
 </div>
 <div class="row content-wrapper">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), multipart: true) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
         <div class="small-6 large-7 columns">
