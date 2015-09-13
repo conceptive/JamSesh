@@ -10,9 +10,12 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates :username, length: { in: 4..20 }
 
-  has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png" 
+  has_attached_file :avatar, styles: { medium: "250x250#", thumb: "100x100#" }, default_url: "/images/:style/missing.png",
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => "/images/:id/:style.:extension" 
 
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, :content_type => ['image/gif', 'image/jpeg', 'image/png', 'image/x-ms-bmp']
 
 	def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
