@@ -17,7 +17,7 @@ gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.7'
 gem 'acts_as_follower', '~> 0.2.1'
 gem 'rails_12factor', group: :production
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '~> 2.1.20'
 gem 'dotenv-rails', :groups => [:development, :test]	
 
 group :development, :test do
