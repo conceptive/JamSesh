@@ -19,4 +19,4 @@
 # Ignore
 Procfile
 # Ignore application configuration
-/config/application.yml
+.env

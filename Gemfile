@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0.7'
+gem 'aws-sdk', '< 2.0'
+gem "aws-s3"
 gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
@@ -18,7 +20,6 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'acts_as_follower', '~> 0.2.1'
 gem 'cancan'
 gem 'rails_12factor', group: :production
-gem 'aws-sdk', '~> 1.6'
 gem 'figaro', '~> 1.1.1'
 
 group :development, :test do
