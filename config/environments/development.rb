@@ -40,4 +40,14 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Paperclip S3 uploads config
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'jam-sesh-pro', 
+      :s3_credentials => "#{Rails.root}/config/aws.yml",
+    },
+    :url => ':s3_domain_url',
+    :path => "/:class/:attachment/:id_partition/:style/:filename"
+  }
 end
