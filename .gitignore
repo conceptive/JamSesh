@@ -20,7 +20,6 @@
 Procfile
 # Ignore application configuration
 
-/config/s3.yml
 /config/secrets.yml
 # Ignore application configuration
 /config/application.yml

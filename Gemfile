@@ -7,7 +7,7 @@ gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise', '~> 3.5.2'
-gem 'aws-sdk', '~> 1.36.1'
+gem 'aws-sdk'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'paperclip', '~> 4.3.0'
 gem 'jquery-rails'
@@ -21,7 +21,7 @@ gem 'acts_as_follower', '~> 0.2.1'
 gem 'cancan'
 gem 'rails_12factor', group: :production
 gem 'fog'
-gem 'figaro', '~> 1.1.1'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
