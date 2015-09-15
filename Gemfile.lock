@@ -235,8 +235,8 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.2)
-  figaro
-  fog
+  figaro (~> 1.1.1)
+  fog (~> 1.24.0)
   foundation-rails
   haml (~> 4.0.7)
   jbuilder (~> 2.0)

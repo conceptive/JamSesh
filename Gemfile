@@ -20,8 +20,8 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'acts_as_follower', '~> 0.2.1'
 gem 'cancan'
 gem 'rails_12factor', group: :production
-gem 'fog'
-gem 'figaro'
+gem 'fog', '~> 1.24.0'
+gem 'figaro', '~> 1.1.1'
 
 group :development, :test do
   gem 'byebug'
