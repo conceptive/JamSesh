@@ -1,8 +1,0 @@
-development:
-  access_key_id: AKIAJBKNN5KVMJ4CYDWA
-  secret_access_key: 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
-  bucket: jamseshpro
-production:
-  access_key_id: AKIAJBKNN5KVMJ4CYDWA
-  secret_access_key: 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
-  bucket: jamseshpro
