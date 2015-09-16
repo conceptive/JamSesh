@@ -4,7 +4,7 @@
 	.welcome
 		- if user_signed_in?
 			.home-sign-out
-				= link_to image_tag(current_user.avatar.url, class: "header-profile-pic" ), user_path(current_user)
+				= link_to image_tag(current_user.avatar.url(:medium), class: "header-profile-pic" ), user_path(current_user)
 				= link_to "Log Out", destroy_user_session_path, method: :delete
 			%h1 
 				Welcome Back, 

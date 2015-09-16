@@ -21,6 +21,5 @@ Procfile
 # Ignore application configuration
 
 /config/secrets.yml
-/.env
 /config/aws.yml
 
