@@ -6,4 +6,4 @@ Resources:
 * SASS
 * Amazon web Services - S3
 
-[Visit Application!](https://www.jamsesh.co)
+Check it Out! --> http://www.jamsesh.co
