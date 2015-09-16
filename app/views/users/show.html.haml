@@ -76,10 +76,11 @@
 		%p
 			Equipment: 
 			%br/
-			- if blank?
-				= @user.equipment
-			- else
+			- if @user.equipment.blank?
 				No equipment yet.
+			- else
+				= @user.equipment
+				
 	
 		/ = @user.all_following.map(&:username).join(" / ")
 	
