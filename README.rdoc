@@ -1,7 +1,6 @@
-# JamSesh
-## A Ruby on Rails web application to help musicians create and find jam sessions in the NYC area.
+# JamSesh - A Ruby on Rails web application to help musicians create and find jam sessions in the NYC area.
 
-### Resources:
+Resources:
 * Ruby on Rails <br>
 * Foundation Framework
 * SASS
