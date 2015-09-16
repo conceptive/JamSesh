@@ -32,15 +32,24 @@
 			%h1 How it Works
 			.small-2.large-4.columns
 				= image_tag "/images/home_create_profile.png", width: "200px"
-				%h4 Create Profile
+				%h4 1. Create Profile
+				%p Share location, instruments, preferred styles and musical influences on your profile to let others know what you are all about.
 			.small-4.large-4.columns
 				= image_tag "/images/home_talk_to_musicians.png", width: "200px"
-				%h4 Talk to Musicians
+				%h4 2. Talk to Musicians
+				%p Browse jam sessions and start connecting with other musicians. If you think you are a good fit, let them know you are interested.
 			.small-6.large-4.columns
 				= image_tag "/images/home_start_jammin.png", width: "200px"
 
-				%h4 Start Jammin'
+				%h4 3. Start Jamming!
+				%p After everybody agrees on a date and place, meet up and let your creative juices flow!
 		.spacing
+
+	.get-started
+		%h1 
+			Ready to Start Jamming?
+			= link_to "Get Started", new_user_registration_path, class: "button"
+
 		
 	.footer-home
 		= link_to "", jams_path, class: "logo"

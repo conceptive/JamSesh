@@ -17,17 +17,17 @@
             <%= f.file_field :avatar %>
             <%= f.input :name, required: true %>
             <%= f.input :username, required: true %>
-            <%= f.input :location %>
+            <%= f.input :location, :placeholder =>  "Brooklyn, Manhattan, New Jersey" %>
             <%= f.input :email, required: true %>
-            <%= f.input :main_instrument, label: "Select your Main Instrument" %>
+            <%= f.input :main_instrument, label: "Select your Main Instrument", :placeholder =>  "Drums, Vocals, Piano" %>
             <%= f.label "Choose your skill level:" %>
             <%= f.collection_select :jam_skill_id, JamSkill.all, :id, :name, { promt: "Preferred Skill Level"} %>
           </div>
           <div class="large-6 columns">
             <%= f.input :user_instruments, label: "What Other Instruments do you Play?" %>
-            <%= f.input :styles, label: "Favorite Genres" %>
-            <%= f.input :influences, label: "Influences (Elvis, Nirvana, Sting...)" %>
-            <%= f.input :equipment, label: "Equipment (Fender, Pearl, Shure...)" %>
+            <%= f.input :styles, label: "Favorite Genres", :placeholder =>  "Rock, Alternative, Pop, Jazz, Folk, Cover/Tribute, Classic Rock..." %>
+            <%= f.input :influences, label: "Influences", :placeholder =>  "Elvis, Nirvana, John Coltrane, Metallica, Adele..." %>
+            <%= f.input :equipment, label: "Equipment", :placeholder =>  "Fender Telecaster, Pearl Drums, Shure, KORG Kaossilator Pro, eBow & pedals..." %>
           </div>
         </div>
         <div class="small-6 large-5 columns">
