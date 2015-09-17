@@ -3,3 +3,11 @@
 .row.content-wrapper
 	.small-6.large-centered.columns
 		= render 'form'
+%footer
+	.row.wrapper
+		= link_to "", jams_path, class: "logo"
+		%nav.breadcrumbs
+			= link_to "About", root_path
+			= link_to "Privacy Policy", root_path
+			= link_to "Terms & Conditions", root_path
+			= link_to "Contact", root_path

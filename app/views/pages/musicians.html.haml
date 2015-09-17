@@ -9,3 +9,11 @@
 			= user.main_instrument
 	.clearfix
 	= will_paginate @users, previous_label: "Newer", next_label: "Older", inner_window: 1, outer_window: 0
+%footer
+	.row.wrapper
+		= link_to "", jams_path, class: "logo"
+		%nav.breadcrumbs
+			= link_to "About", root_path
+			= link_to "Privacy Policy", root_path
+			= link_to "Terms & Conditions", root_path
+			= link_to "Contact", root_path
