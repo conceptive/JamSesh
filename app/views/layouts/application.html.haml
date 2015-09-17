@@ -45,16 +45,11 @@
 						= link_to "Log in", new_user_session_path
 						= link_to "Join", new_user_registration_path, class: "button"			
 				
-				/ Off-Canvas menu
-				#{ link_to 'Menu', '#', class: "right-off-canvas-toggle"}
+
 	%main.inner-wrap			
 		= yield
 
 
-
-	%aside.right-off-canvas-menu
-		%ul.off-canvas-list
-			%li= link_to "Start a Jam", new_jam_path
 
 
 
