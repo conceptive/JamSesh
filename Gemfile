@@ -20,6 +20,7 @@ gem 'acts_as_follower', '~> 0.2.1'
 gem 'cancan'
 gem 'rails_12factor', group: :production
 gem 'aws-sdk', '~> 1.6'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
