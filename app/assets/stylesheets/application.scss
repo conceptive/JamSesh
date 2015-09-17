@@ -25,6 +25,13 @@ $darkblue	   : #35485f;
 
 /* General Layout */
 
+body {
+	font-family: 'TeX Gyre Heros', sans-serif;
+	font-weight: 400;
+	letter-spacing: 1.4px;
+	color: $darkgrey;
+}
+
 p, h1, h2, h3, h4, h5, h6 {
 	font-family: 'TeX Gyre Heros', sans-serif;
 	font-weight: 400;
@@ -68,6 +75,30 @@ p, h1, h2, h3, h4, h5, h6 {
 	    font-size: 1.2rem;
 	    letter-spacing: 1px;
 	}
+}
+
+::-webkit-input-placeholder {
+   color: $base;
+   font-weight: 400;
+   font-size: .8rem;
+}
+
+:-moz-placeholder {
+   color: $base;
+   font-weight: 400;
+   font-size: .8rem;
+}
+
+::-moz-placeholder { 
+   color: $base;
+   font-weight: 400;
+   font-size: .8rem;
+}
+
+:-ms-input-placeholder {  
+   color: $base;
+   font-weight: 400;
+   font-size: .8rem;
 }
 
 .logo {
@@ -479,10 +510,13 @@ header {
 		padding-top: 0.2rem;
 		a {
 		margin: 0 0 0 0.4rem;
-		color: #ccc;
+		color: $smoke;
 		text-decoration: none;
 		&:hover {
-			color: #50A7C7;
+			color: $green;
+		}
+		a:active, a:focus, a:visited {
+			color: $green !important;
 		}
 	}
 		a:hover {
@@ -514,7 +548,7 @@ ul#drop1 {
 	width: 100px;
 	margin-left: 4px;
 	a {
-		font-size: 1rem;
+		font-size: .8rem;
 		padding: .6rem 1.2rem .6rem .8rem;
 	}
 	a:hover {
@@ -533,7 +567,7 @@ ul#drop1 {
 
 nav .button  {
 	margin-right: .4rem;
-	padding: .6rem 1.2rem;
+	padding: .5rem 1.1rem;
 	border: none;
 	border-radius: .3rem;
 	outline: none;
