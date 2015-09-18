@@ -52,17 +52,27 @@
 						= link_to "Log in", new_user_session_path
 						= link_to "Join", new_user_registration_path, class: "button"			
 				
+				#{ link_to image_tag('/images/nav_icon.png', width: "40px"), '#', class: "right-off-canvas-toggle"}
 
 	%main.inner-wrap			
 		= yield
+	
+		%aside.right-off-canvas-menu
+			%ul.off-canvas-list
+				- if user_signed_in?
+					%h5 
+						=link_to image_tag(current_user.avatar.url(:medium) , class: "header-profile-pic" ), user_path(current_user)
+						=link_to current_user.name, user_path(current_user)
+					%li= link_to "Edit Profile", edit_user_registration_path
+					%li= link_to "Start a Jam", new_jam_path
+					%li= link_to "Jams", jams_path
+					%li= link_to "Musicians", musicians_path		
+					%li= link_to "Sign Out", destroy_user_session_path, method: :delete	
 
-
-
-
-
-		
-
-
+				- else
+					%li= link_to "Browse", jams_path
+					%li= link_to "Log in", new_user_session_path
+					%li= link_to "Join", new_user_registration_path		
 
 
 

@@ -146,6 +146,35 @@ p, h1, h2, h3, h4, h5, h6 {
 	border: 1px solid $green;
 }
 
+.right-off-canvas-menu {
+	top: 60px;
+	ul.off-canvas-list {
+		li {
+			a:hover {
+				color: $green;
+			}
+		}
+		li:hover {
+			background: $darkgrey
+		}
+		h5 {
+			padding: 1rem;
+			a {
+				color: #eeeeee;
+			}
+			a:hover {
+				color: $green;
+			}
+		}
+	}
+}
+
+.right-off-canvas-toggle {
+	display: none
+}
+
+
+
 /* Home Content */
 
 .home-overlay {
@@ -182,7 +211,7 @@ p, h1, h2, h3, h4, h5, h6 {
   	position: fixed;
   	top: 0;
   	right: 0;
-  	margin-top: 1rem;
+  	margin-top: 1.4rem;
   	a {
   		color: #fff;
   		text-shadow: 1px 1px #000;
@@ -1012,11 +1041,96 @@ footer {
 
 /* Media Queries */
 @media #{$medium-only} { 
+	.home-overlay .home-header {
+		background-position: left;
+	}
+	.home-overlay .welcome {
+		width: 90%;
+	}
+	.home-overlay .home-menu-right .signup-btn {
+		padding: .40rem .50rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    margin: 0.8rem 1rem 0.8rem .4rem;
+    font-size: 1rem;
+    -webkit-transition: 0.25s all;
+    -moz-transition: 0.25s all;
+    -ms-transition: 0.25s all;
+    -o-transition: 0.25s all;
+    transition: 0.25s all;
+    text-shadow: none;
+	}
+	.overlay {
+		overflow: scroll;
+		li {
+			list-style: none;
+		}
+		.row {
+			padding: 0 1rem;
+			.overlay-box {
+				margin-top: 3rem;
+			}
+			.logo {
+			float: none;
+			}
+			.close-overlay {
+				margin: 1rem auto;
+				top: auto;
+			}
+			.overlay-p {
+				clear: both;
+			}
+			.form-actions .btn {
+				float: none;
+			}
+			.large-6 {
+				text-align: center;
+				margin-bottom: 2rem;
+				#new_user {
+					width: 60%;
+					margin: 0 auto;
+				}
+			}
+			.small-6 {
+				#new_user {
+					width: 60%;
+					margin: 0 auto;
+				}
+			}
 
+		}
+	}
+	.wrapper {
+		width: 100%;
+	}
+	.right-off-canvas-toggle {
+		display: block; 
+	}
+	.how-it-works {
+		.row {
+			.small-2, .small-4, .small-6 {
+				margin: 1rem;
+				width: 94%;
+				text-align: center;
+				img {
+					margin: auto;
+				}
+			}
+		}
+	}
 	header .header-wrapper {
 		width: 100%
 	}
+	nav {
+		.button {
+			display: none
+		}
+	}
 	.nav-menu {
+		display: none;
+	}
+	.nav-username {
 		display: none;
 	}
 	.auth-links {
@@ -1025,15 +1139,172 @@ footer {
 	.logo {
 		margin: 0 auto;
 	}
-}
+	.results-box {
+		width: 45%
+	}
+	.small-6 {
+		width: 100%;
+		text-align: center;
+	}
+	.userbox {
+		text-align: left;
+		.content {
+			text-align: center;
+		}
+	}
+	.user_bio {
+		padding: 1rem;
+	}
+	.cancel-account a {
+		float: right;
+	}
+	.form-actions.submit-btn .btn {
+		margin: 40px 10px;
+	}
+	label {
+		float: left;
+	}
+	.profile-sub-header {
+		height: auto;
+		padding-bottom: 2rem;
+		.user-profile-wrap {
+			height: auto;
+			text-align: center;
+			.small-2, .small-4, .small-6 {
+				padding: 1rem;
+				width: 100%;
+				margin: 0;
+				text-align: center;
+			img {
+				width: 40%;
+			}
+			.follow-box .followers, .follow-box .following {
+				margin: .6rem auto;
+				float: none;
+			}
+			}
+		}
+	}
+	.edit {
+		display: none
+	}
+	#comments {
+		max-height: 100%;
+		overflow-y: visible; 
+		.comment .content {
+		text-align: left
+		}
+	}
+	.comments-box {
+		border-top: 1px solid #eee;
+		margin-top: 3rem;
+	}
+	footer {
+		height: auto;
+		.row {
+			text-align: center;
+			.logo {
+				display: none
+			}
+			.breadcrumbs {
+				float: none;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.footer-home {
+		text-align: center;
+		a.logo {
+			display: none;
+		}
+		nav.breadcrumbs {
+			float: none;
+			margin-bottom: 10px;
+		}
+	}
 
+}
 
 @media #{$small-only} { 
-
+	.home-overlay .home-header {
+		background-position: left;
+	}
+	.home-overlay .welcome {
+		width: 90%;
+	}
+	.home-overlay .home-menu-right .signup-btn {
+		padding: .40rem .50rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    margin: 0.8rem 1rem 0.8rem .4rem;
+    font-size: 1rem;
+    -webkit-transition: 0.25s all;
+    -moz-transition: 0.25s all;
+    -ms-transition: 0.25s all;
+    -o-transition: 0.25s all;
+    transition: 0.25s all;
+    text-shadow: none;
+	}
+	.how-it-works {
+		.row {
+			.small-2, .small-4, .small-6 {
+				margin: 1rem;
+				width: 94%;
+				text-align: center;
+				img {
+					margin: auto;
+				}
+			}
+		}
+	}
+	.overlay {
+		overflow: scroll;
+		li {
+			list-style: none;
+		}
+		.row {
+			padding: 0 1rem;
+			.overlay-box {
+				margin-top: 3rem;
+			}
+			.logo {
+			float: none;
+			}
+			.close-overlay {
+				margin: 1rem auto;
+				top: auto;
+			}
+			.overlay-p {
+				clear: both;
+			}
+			.form-actions .btn {
+				float: none;
+			}
+			.large-6 {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	.wrapper {
+		width: 100%;
+	}
+	.right-off-canvas-toggle {
+		display: block; 
+	}
 	header .header-wrapper {
 		width: 100%
 	}
+	nav {
+		.button {
+			display: none
+		}
+	}
 	.nav-menu {
+		display: none;
+	}
+	.nav-username {
 		display: none;
 	}
 	.auth-links {
@@ -1042,16 +1313,92 @@ footer {
 	.logo {
 		margin: 0 auto;
 	}
+	.results-box {
+		width: 94%;
+	}
+	.small-6 {
+		width: 100%;
+		text-align: center;
+	}
+	.large-6 {
+		input[type="file"] {
+			margin: 1rem auto;
+		}
+	}
+	.user_bio {
+		padding: 1rem;
+	}
+	.cancel-account a {
+		float: right;
+	}
+	.form-actions.submit-btn .btn {
+		margin: 40px 0;
+	}
+	.userbox {
+		text-align: left;
+		.content {
+			text-align: center;
+		}
+	}
+	label {
+		float: left;
+	}
+	.edit {
+		display: none
+	}
+	.profile-sub-header {
+		height: auto;
+		padding-bottom: 2rem;
+		.user-profile-wrap {
+			height: auto;
+			text-align: center;
+			.small-2, .small-4, .small-6 {
+			width: 100%;
+			margin: 0;
+			text-align: center;
+			.follow-box .followers, .follow-box .following {
+				margin: .6rem auto;
+				float: none;
+			}
+			}
+		}
+	}
+	#comments {
+		max-height: 100%;
+		overflow-y: visible; 
+		.comment .content {
+		text-align: left
+		}
+	}
+	.comments-box {
+		border-top: 1px solid #eee;
+		margin-top: 3rem;
+	}
+	footer {
+		height: auto;
+		.row {
+			text-align: center;
+			.logo {
+				display: none
+			}
+			.breadcrumbs {
+				float: none;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.footer-home {
+		text-align: center;
+		a.logo {
+			display: none;
+		}
+		nav.breadcrumbs {
+			float: none;
+			margin-bottom: 10px;
+		}
+	}
 
 }
-
-
-
-
-
-
-
-
 
 
 

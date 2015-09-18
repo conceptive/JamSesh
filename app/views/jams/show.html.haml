@@ -13,7 +13,7 @@
 			.clearfix
 			%h1= @jam.title
 			.small-6.large-5.columns
-				= link_to image_tag(@jam.user.avatar.url(:thumb), class: "profile-pic" ), user_path(@jam.user.id)
+				= link_to image_tag(@jam.user.avatar.url(:medium), class: "profile-pic" ), user_path(@jam.user.id)
 			.small-6.large-7.columns	
 				%h6
 					Jam Leader: 
